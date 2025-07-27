@@ -22,7 +22,7 @@ const uiuxWorks = [
   { id: 4, src: "/UIUX/E-Commerce/Services.png", alt: "UI/UX 4" },
   { id: 5, src: "/UIUX/E-Commerce/customizable gift page.png", alt: "UI/UX 5" },
   { id: 6, src: "/UIUX/progress/Order summery & shipping Info.jpg", alt: "UI/UX 6" },
-  { id: 7, src: "/UIUX/progress/landing page.png", alt: "UI/UX 7" },
+  { id: 7, src: "/UIUX/progress/landingpage.png", alt: "UI/UX 7" },
   { id: 8, src: "/UIUX/gems/AuctionPage.png", alt: "UI/UX 8" },
   { id: 9, src: "/UIUX/gems/become a seller add address.png", alt: "UI/UX 9" },
 ];

@@ -276,7 +276,7 @@ const fullStackProjects = [
               },
               {
                 title: "🛠 Skilled Designer",
-                desc: "Proficient in Figma, Sketch, and Adobe XD, I craft interfaces that are responsive, elegant, and goal-driven.",
+                desc: "Proficient in Figma, and Adobe XD, I craft interfaces that are responsive, elegant, and goal-driven.",
               },
               {
                 title: "🤝 Team Collaborator",
