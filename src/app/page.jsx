@@ -133,7 +133,7 @@ const fullStackProjects = [
 
   const gradientText = "text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500";
 
-  const typedName = useTypingEffect("IGNATIOUS REYOL JANUKSHAN", 120);
+  const typedName = useTypingEffect("IIGNATIOUS REYOL JANUKSHAN", 80);
   // For typing effect, create a custom hook
   function useTypingEffect(text, speed = 150) {
     const [displayedText, setDisplayedText] = useState("");
