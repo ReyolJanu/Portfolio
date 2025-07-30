@@ -239,15 +239,17 @@ const fullStackProjects = [
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="w-80 h-100 rounded-full overflow-hidden shadow-2xl border-6 border-white relative"
+          className="w-80 h-100 rounded-full overflow-hidden shadow-2xl border-6 border-white relative scale-110 grayscale"
           style={{ left: "-50px", top: "50px" }} // shifted left 50px & down 50px
+
         >
           <Image
-            src="/profile2.jpg"
+            src="/profile3.jpg"
             alt="IGNATIOUS REYOL JANUKSHAN"
             width={500}
             height={288}
             className="object-cover w-[110%] h-[150%]"
+            style={{ transform: "translate(0px, -70px)" }}
             priority
           />
         </motion.div>
