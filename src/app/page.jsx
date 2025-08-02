@@ -528,13 +528,13 @@ const fullStackProjects = [
 
 
       {/* Fixed Contact Button bottom right */}
-      <button
+      {/* <button
         onClick={toggleModal}
         className="fixed bottom-6 right-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:from-pink-500 hover:to-purple-500 transition duration-300 z-50"
         aria-label="Open contact modal"
       >
         Contect me
-      </button>
+      </button> */}
       <div
         className="fixed bottom-20 right-6 space-x-[10px]  text-white  pb-[8px] rounded-full shadow-lg hover:from-pink-500 z-50"
       >
