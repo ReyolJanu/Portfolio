@@ -46,8 +46,6 @@ export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     document.body.className = "bg-gray-900 text-white";
@@ -61,31 +59,13 @@ export default function HomePage() {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
 
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY < lastScrollY || currentScrollY < 100) {
-        // Scrolling up or at top of page - show navbar
-        setShowNavbar(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past 100px - hide navbar
-        setShowNavbar(false);
-        setIsBurgerOpen(false); // Close burger menu when hiding
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
-
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, []);
 
   const arrowStyles = {
     position: "absolute",
@@ -195,6 +175,8 @@ const fullStackProjects = [
     }
   };
 
+
+
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
@@ -209,34 +191,34 @@ const fullStackProjects = [
       }}
     >
       {/* Navigation Bar */}
-      <nav className={`flex justify-between items-center fixed top-0 w-full z-50 transition-transform duration-300 ease-in-out ${
-        showNavbar ? 'translate-y-0' : '-translate-y-full'
-      }`}>
+      <nav className="flex justify-between items-center fixed top-0 w-full z-50 px-4 py-4">
         {isMobile ? (
-          <div className="w-full bg-white/10 backdrop-blur-lg  shadow-lg px-4 py-4 flex justify-between items-center">
-            {/* Mobile Header - Clean minimal design */}
-            <div className="flex items-center">
-              <span className="font-semibold text-lg bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Reyol Janu</span>
+          <>
+            {/* Mobile Header with Burger */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white">
+                <Image src="/profile3.jpg" alt="Profile" width={40} height={40} className="object-cover w-full h-full" />
+              </div>
+              <span className="text-white font-semibold text-sm">Reyol Janu</span>
             </div>
             <button 
               onClick={() => setIsBurgerOpen(!isBurgerOpen)}
               className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${isBurgerOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-white mt-1 transition-opacity duration-300 ${isBurgerOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-white mt-1 transition-transform duration-300 ${isBurgerOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+                <span className={`block w-6 h-0.5 bg-white transition-transform ${isBurgerOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+                <span className={`block w-6 h-0.5 bg-white mt-1 transition-opacity ${isBurgerOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block w-6 h-0.5 bg-white mt-1 transition-transform ${isBurgerOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
               </div>
             </button>
-            {/* Mobile Menu with Premium Glassy Effect */}
+            {/* Mobile Menu */}
             {isBurgerOpen && (
-              <div className="absolute top-full left-3 right-3 mx-auto bg-gray-900/80 backdrop-blur-2xl border border-purple-500/30 py-8 shadow-[0_20px_50px_rgba(168,85,247,0.3)] rounded-3xl z-50 animate-in slide-in-from-top-2 duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10 rounded-3xl"></div>
-                <ul className="relative flex flex-col items-center gap-4 text-white px-6">
+              <div className="absolute top-full left-0 w-full bg-black/90 backdrop-blur-md border-t border-white/20 py-4">
+                <ul className="flex flex-col items-center gap-4 text-white">
                   {["me", "about", "projects", "skills"].map((item) => (
                     <li
                       key={item}
-                      className="capitalize hover:text-white hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 active:scale-95 transition-all duration-300 py-4 px-8 rounded-xl text-lg font-semibold w-full text-center cursor-pointer border border-transparent hover:border-purple-400/30 backdrop-blur-sm"
+                      className="capitalize hover:text-purple-500 transition-colors duration-150 py-2"
                       onClick={() => {
                         handleNavClick(item);
                         setIsBurgerOpen(false);
@@ -245,22 +227,21 @@ const fullStackProjects = [
                       {item}
                     </li>
                   ))}
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent my-2"></div>
                   <li 
-                    className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/40 rounded-2xl px-10 py-4 hover:from-purple-500/30 hover:to-pink-500/30 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20 active:scale-95 transition-all duration-300 cursor-pointer font-semibold text-white backdrop-blur-sm" 
+                    className="border border-white/30 rounded-full px-4 py-2" 
                     onClick={() => {
                       handleGallery();
                       setIsBurgerOpen(false);
                     }}
                   >
-                    🎨 Gallery
+                    Gallery
                   </li>
                 </ul>
               </div>
             )}
-          </div>
+          </>
         ) : (
-          <div className="w-full flex justify-center mt-[20]">
+          <div className="w-full flex justify-center">
             <div className="w-auto max-w-[95%] rounded-full px-10 py-3 flex justify-center items-center bg-white/10 backdrop-blur-md border-b border-white/20 text-white shadow-lg">
               <ul className="flex justify-center items-center gap-8 text-base text-white/80 cursor-pointer select-none">
                 {["me", "about", "projects", "skills"].map((item) => (
@@ -280,33 +261,29 @@ const fullStackProjects = [
       </nav>
 
       {/* Landing Page */}
-      <section id="home" className="pt-32 px-4 md:px-24 max-w-7xl mx-auto">
+      <section id="home" className="pt-32 px-6 md:px-24 max-w-7xl mx-auto">
         {isMobile ? (
-          <div className="flex flex-col items-center justify-center min-h-[70vh] text-center py-8">
-            {/* Profile Image for Mobile */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }} 
-              animate={{ opacity: 1, scale: 1 }} 
-              transition={{ duration: 0.8 }}
-              className="mb-8 flex justify-center items-center"
-            >
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl flex justify-center items-center">
-                <Image src="/profile3.jpg" alt="Reyol Janu" width={128} height={128} className="object-cover object-center w-full h-full grayscale hover:grayscale-0 transition-all duration-300" priority />
-              </div>
-            </motion.div>
-            
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="w-full max-w-lg mx-auto px-4">
-              <h2 className="text-2xl font-extrabold leading-tight mb-6 text-white">
-                I'm <span className={`text-3xl font-bold ${gradientText}`}>{typedName}<span className="border-r-2 border-purple-500 animate-pulse inline-block ml-1" /></span>,<br/>a Passionate UI/UX Designer & Full Stack Developer
-              </h2>
-              <p className="text-sm text-gray-300 mb-8 leading-relaxed">
-                I design clean, modern, and user-centric experiences, and build scalable full-stack applications. Let's create great products together.
-              </p>
-              <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full shadow-lg transition duration-300 font-semibold hover:shadow-xl hover:scale-105">
-                View My Work
-              </button>
-            </motion.div>
-          </div>
+          <div className="text-center py-8">\n            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>\n              <h2 className="text-2xl font-extrabold leading-tight mb-4 text-white">\n                I'm <span className={`text-3xl font-bold ${gradientText}`}>{typedName}<span className="border-r-2 border-purple-500 animate-pulse inline-block ml-1" /></span>,<br/>a Passionate UI/UX Designer & Full Stack Developer\n              </h2>\n              <p className="text-sm text-gray-300 mb-6 leading-relaxed px-4">\n                I design clean, modern, and user-centric experiences, and build scalable full-stack applications. Let's create great products together.\n              </p>\n              <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full shadow-lg transition duration-300 font-semibold">\n                View My Work\n              </button>\n            </motion.div>\n          </div>
+            <div className="p-4">
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="text-center">
+                <h2 className={`text-2xl font-extrabold leading-tight mb-4 text-white`}>I'm <span className={`text-3xl font-bold ${gradientText}`}>{typedName}<span className="border-r-2 border-purple-500 animate-pulse inline-block ml-1" /></span>,<br/>a Passionate UI/UX Designer & Full Stack Developer</h2>
+                <p className="text-sm text-gray-300 mb-6 leading-relaxed">I design clean, modern, and user-centric experiences, and build scalable full-stack applications. Let’s create great products together.</p>
+                <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full shadow-lg transition duration-300 font-semibold">View My Work</button>
+              </motion.div>
+            </div>
+            <div className="p-4 flex justify-center">
+            <div className="p-4">
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="text-center">
+                <h2 className={`text-2xl font-extrabold leading-tight mb-4 text-white`}>I'm <span className={`text-3xl font-bold ${gradientText}`}>{typedName}<span className="border-r-2 border-purple-500 animate-pulse inline-block ml-1" /></span>,<br/>a Passionate UI/UX Designer & Full Stack Developer</h2>
+                <p className="text-sm text-gray-300 mb-6 leading-relaxed">I design clean, modern, and user-centric experiences, and build scalable full-stack applications. Let's create great products together.</p>
+                <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full shadow-lg transition duration-300 font-semibold">View My Work</button>
+              </motion.div>
+            </div>
+            <div className="p-4 flex justify-center">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="w-44 h-44 rounded-full overflow-hidden shadow-2xl border-4 border-white grayscale">
+                <Image src="/profile3.jpg" alt="IGNATIOUS REYOL JANUKSHAN" width={400} height={400} className="object-cover w-full h-full transform -translate-y-4" priority />
+              </motion.div>
+            </div>
         ) : (
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <motion.div
@@ -316,46 +293,33 @@ const fullStackProjects = [
               className="max-w-xl text-center md:text-left"
             >
               <h2 className={`text-3xl md:text-4xl font-extrabold leading-tight mb-4 text-white`}>I'm <span className={`text-4xl font-bold ${gradientText}`} aria-label="IGNATIOUS REYOL JANUKSHAN">{typedName}<span className="border-r-2 border-purple-500 animate-pulse inline-block ml-1" /></span>,<br/>a Passionate UI/UX Designer & Full Stack Developer</h2>
-              <p className="text-base md:text-lg text-gray-300 mb-6 leading-relaxed">I design clean, modern, and user-centric experiences, and build scalable full-stack applications. Let's create great products together.</p>
+              <p className="text-base md:text-lg text-gray-300 mb-6 leading-relaxed">I design clean, modern, and user-centric experiences, and build scalable full-stack applications. Let’s create great products together.</p>
               <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-500 hover:text-white transition duration-300 font-semibold">View My Work</button>
             </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 1 }} 
-              className="flex justify-center items-center"
-            >
-              <div className="md:w-80 md:h-80 w-44 h-44 rounded-full overflow-hidden shadow-2xl border-4 border-white/20 flex justify-center items-center">
-                <Image src="/profile3.jpg" alt="IGNATIOUS REYOL JANUKSHAN" width={320} height={320} className="object-cover object-center w-full h-full grayscale hover:grayscale-0 transition-all duration-300" priority />
-              </div>
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="md:w-80 md:h-64 w-44 h-44 rounded-full overflow-hidden shadow-2xl border-4 border-white relative md:scale-110 md:-translate-x-12 md:translate-y-12 grayscale">
+              <Image src="/profile3.jpg" alt="IGNATIOUS REYOL JANUKSHAN" width={500} height={500} className="object-cover w-full h-full transform md:-translate-y-20 -translate-y-4" priority />
             </motion.div>
           </div>
         )}
       </section>
 
       {/* About Me Section */}
-      <section className="mt-12 px-4 md:px-16 py-12 md:py-20" id="about">
+      <section className="mt-[50px] px-6 md:px-16 py-20" id="about">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-5xl mx-auto"
+          className="max-w-4xl mx-auto text-center"
         >
-          <h3 className="text-2xl md:text-3xl font-semibold mb-6 md:mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent text-center">About Me</h3>
-          
-          <div className="text-center mb-8 md:mb-10">
-            <p className="text-sm md:text-lg leading-relaxed text-gray-300 max-w-3xl mx-auto px-2">
-              Hello! I'm <span className="font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Ignatious Reyol Janukshan</span>,
-              a passionate UI/UX Designer and Computer Science undergraduate at Uva Wellassa University, Sri Lanka.
-            </p>
-            <p className="text-sm md:text-lg leading-relaxed text-gray-300 max-w-3xl mx-auto px-2 mt-4">
-              With <span className="font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">12+</span> months of freelance experience, I specialize in crafting user-focused designs — from flyers and posters to prototypes and web interfaces.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <h3 className="text-3xl font-semibold mb-6 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">About Me</h3>
+          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+            Hello! I'm <span className="font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Ignatious Reyol Janukshan</span>,
+            a passionate UI/UX Designer and Computer Science undergraduate at Uva Wellassa University, Sri Lanka. With <span className="font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">12 +</span>  months of freelance experience, I specialize in crafting user-focused designs — from flyers and posters to prototypes and web interfaces.
+            I bring creativity, detail, and functionality to every project I take on. I'm also the Vice Captain of the University Chess Team, which sharpens my strategic thinking and design approach.
+          </p>
+          <div className="mt-6 grid md:grid-cols-3 gap-6 text-left">
             {[
               {
                 title: "💡 Creative Thinker",
@@ -363,35 +327,30 @@ const fullStackProjects = [
               },
               {
                 title: "🛠 Skilled Designer",
-                desc: "Proficient in Figma and Adobe XD, I craft interfaces that are responsive, elegant, and goal-driven.",
+                desc: "Proficient in Figma, and Adobe XD, I craft interfaces that are responsive, elegant, and goal-driven.",
               },
               {
                 title: "🤝 Team Collaborator",
                 desc: "I love working with developers, stakeholders, and users to turn ideas into impactful digital experiences.",
               },
             ].map(({ title, desc }) => (
-              <motion.div
+              <div
                 key={title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg hover:shadow-[0_4px_20px_rgba(168,85,247,0.2)] hover:bg-white/10 transition-all duration-300 text-center md:text-left"
+                className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow transition-transform transform hover:scale-105 hover:shadow-[0_4px_20px_rgba(168,85,247,0.3)] duration-300"
               >
-                <h4 className="font-bold mb-3 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent text-base md:text-lg">{title}</h4>
-                <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{desc}</p>
-              </motion.div>
+                <h4 className="font-bold mb-2 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">{title}</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">{desc}</p>
+              </div>
             ))}
           </div>
         </motion.div>
       </section>
 
       {/* Skills Section */}
-      <section className="px-4 md:px-24 py-16 max-w-7xl mx-auto" id="skills">
-        <div className="p-6 md:p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg hover:shadow-[0_4px_20px_rgba(168,85,247,0.2)] hover:bg-white/10 transition-all duration-300">
-          <h3 className="text-3xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-8 text-center tracking-wide">
-            My Skills
-          </h3>
+  <section className="px-4 md:px-24 py-16 max-w-7xl mx-auto border border-white/80 rounded-[20px]" id="skills">
+        <h3 className="text-3xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-8 text-center tracking-wide">
+          My Skills
+        </h3>
 
         {/* Toggle Buttons */}
         <div className="flex justify-center gap-8 mb-12">
@@ -435,18 +394,16 @@ const fullStackProjects = [
             </motion.div>
           ))}
         </div>
-        </div>
       </section>
 
       {/* Projects Section */}
       <section
-        className="px-4 md:px-24 py-16 max-w-7xl mx-auto mt-[50px]"
+        className="px-4 md:px-24 py-16 max-w-7xl mx-auto shadow-xl mt-[50px] border border-white/80 rounded-[20px]"
         id="projects"
       >
-        <div className="p-6 md:p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg hover:shadow-[0_4px_20px_rgba(168,85,247,0.2)] hover:bg-white/10 transition-all duration-300">
-          <h3 className="text-3xl font-extrabold mb-10 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent text-center tracking-wide">
-            My Projects
-          </h3>
+        <h3 className="text-3xl font-extrabold mb-10 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent text-center tracking-wide">
+          My Projects
+        </h3>
 
         {/* Toggle Buttons */}
         <div className="flex justify-center gap-8 mb-12">
@@ -548,7 +505,6 @@ const fullStackProjects = [
             )
           )}
         </Carousel>
-        </div>
       </section>
 
       {/* Modal */}
@@ -619,8 +575,19 @@ const fullStackProjects = [
         </div>
       )}
 
-      {/* Fixed Contact Buttons */}
-      <div className="fixed bottom-16 right-4 space-x-3 text-white pb-2 rounded-full shadow-lg hover:from-pink-500 z-50 flex items-center">
+
+      {/* Fixed Contact Button bottom right */}
+      {/* <button
+        onClick={toggleModal}
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:from-pink-500 hover:to-purple-500 transition duration-300 z-50"
+        aria-label="Open contact modal"
+      >
+        Contect me
+      </button> */}
+      <div
+        className="fixed bottom-16 right-4 space-x-3 text-white pb-2 rounded-full shadow-lg hover:from-pink-500 z-50 flex items-center"
+      >
+        {/* <button className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent text-center">email</button> */}
         <a
           href="https://github.com/ReyolJanu"
           target="_blank"
@@ -650,8 +617,8 @@ const fullStackProjects = [
             <SiLinkedin />
           </button>
         </a>
-      </div>
 
+      </div>
       <section id="gallery">
         <Gallery />
       </section>
