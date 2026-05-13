@@ -53,7 +53,7 @@ export function ToolsStack() {
             <div className="max-w-[420px]">
               <span className="mono text-[#A1A1AA] text-xs mb-5 block">Tools & stack</span>
               <h2 className="h2 text-[#212121] mb-5">
-                The tools & Techs <br />I use on projects.
+                The <span className="text-[#6A48FF]">tools & Techs</span> <br />I use on projects.
               </h2>
               <p className="text-base text-[#A1A1AA] leading-relaxed mb-6">
                 I design in <span className="text-[#212121] font-medium">Figma</span>, prototype in <span className="text-[#212121] font-medium">Framer</span>, and build with <span className="text-[#212121] font-medium">Next.js</span>, <span className="text-[#212121] font-medium">React</span>, and <span className="text-[#212121] font-medium">Tailwind CSS</span>, covering the full journey from concept to shipped product.

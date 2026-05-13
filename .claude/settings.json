@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir \"c:\\\\Users\\\\reyol\\\\Desktop\\\\Portfolio-1\\\\public\" /b)"
+      "Bash(dir \"c:\\\\Users\\\\reyol\\\\Desktop\\\\Portfolio-1\\\\public\" /b)",
+      "Bash(npm audit *)",
+      "Bash(npm show *)"
     ]
   }
 }

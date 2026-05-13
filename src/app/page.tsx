@@ -51,7 +51,7 @@ export default function HomePage() {
             <div className="pt-20 pb-16 md:pt-24 md:pb-20 pr-0 md:pr-12">
               <FadeIn direction="up">
                 <h1 className="h1 text-[#212121]">
-                  Crafting interfaces<br />
+                  Crafting <span className="text-[#6A48FF]">interfaces</span><br />
                   that feel inevitable.
                 </h1>
               </FadeIn>
@@ -133,7 +133,7 @@ export default function HomePage() {
         <Container>
           <FadeIn>
             <div className="mb-4 text-center">
-              <h2 className="h2 text-[#212121]">Selected work</h2>
+              <h2 className="h2 text-[#212121]"><span className="text-[#6A48FF]">Selected</span> work</h2>
               <p className="body-lg text-[#A1A1AA] mt-3 max-w-[480px] mx-auto">
                 From design systems to full-stack products, here&apos;s a look at recent projects.
               </p>
@@ -208,7 +208,7 @@ export default function HomePage() {
 
           {/* Footer link */}
           <FadeIn delay={0.15}>
-            <div className="mt-6 flex justify-center">
+            <div className="mt-6 flex justify-end">
               <Link
                 href="/work"
                 className="relative inline-flex items-center gap-2 border border-dashed border-[#6A48FF] px-6 py-2.5 text-sm font-bold text-[#6A48FF] transition-colors hover:bg-[#6A48FF]/5"
@@ -244,7 +244,7 @@ export default function HomePage() {
               <div>
                 <span className="mono text-[#A1A1AA] text-xs mb-4 block">About me</span>
                 <h2 className="h2 text-[#212121] mb-5">
-                  I design and build digital products.
+                  I <span className="text-[#6A48FF]">design and build</span> digital products.
                 </h2>
                 <p className="body-lg text-[#A1A1AA] mb-6">
                   I&apos;m a freelance UI/UX designer and interface engineer based in Sri Lanka.
@@ -276,7 +276,7 @@ export default function HomePage() {
         <Container>
           <FadeIn>
             <div className="mb-12 text-center">
-              <h2 className="h2 text-[#212121]">What I do</h2>
+              <h2 className="h2 text-[#212121]"><span className="text-[#6A48FF]">What</span> I do</h2>
               <p className="body-lg text-[#A1A1AA] mt-3 max-w-[480px] mx-auto">
                 From wireframes to shipped product, here&apos;s how I help bring ideas to life.
               </p>
