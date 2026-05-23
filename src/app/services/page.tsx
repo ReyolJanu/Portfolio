@@ -7,9 +7,27 @@ import { services } from "@/lib/data";
 import { FiArrowRight } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Services | UI/UX Design & Interface Engineering",
   description:
-    "UI/UX design, design engineering, design systems, and brand identity, the services I offer as a freelance designer and interface engineer.",
+    "Freelance services by Janukshan — UI/UX design, design engineering, component library development, and brand identity. Available for project-based and retainer work.",
+  keywords: [
+    "freelance UI/UX design services", "design engineering services", "interface development",
+    "Figma design", "React component library", "design system services",
+    "brand identity design", "Next.js development", "hire UI/UX designer Sri Lanka",
+  ],
+  alternates: { canonical: "https://janukshan.dev/services" },
+  openGraph: {
+    url: "https://janukshan.dev/services",
+    title: "Services | UI/UX Design & Interface Engineering — Janukshan",
+    description: "Freelance UI/UX design, design engineering, and brand identity services. Available for project-based work.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — Design Services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | UI/UX Design & Interface Engineering — Janukshan",
+    description: "Freelance UI/UX design, design engineering, and brand identity services.",
+    images: ["/profilepng.png"],
+  },
 };
 
 const process = [

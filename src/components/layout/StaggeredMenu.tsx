@@ -285,7 +285,7 @@ export function StaggeredMenu() {
       <div className={`fixed inset-0 z-40 pointer-events-none ${open ? "pointer-events-auto" : ""}`} aria-hidden={!open}>
         {/* Prelayers */}
         <div ref={preLayersRef} className="absolute top-0 right-0 bottom-0 w-full pointer-events-none z-[5]">
-          <div className="sm-prelayer absolute top-0 right-0 h-full w-full" style={{ background: "rgba(106, 72, 255, 0.1)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)" }} />
+          <div className="sm-prelayer absolute top-0 right-0 h-full w-full" style={{ background: "rgba(var(--color-primary-rgb), 0.1)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)" }} />
         </div>
 
         {/* Panel */}
@@ -304,7 +304,7 @@ export function StaggeredMenu() {
                     href={item.link}
                     aria-label={item.ariaLabel}
                     data-index={idx + 1}
-                    className="sm-panel-item relative text-[#212121] font-semibold cursor-pointer leading-none uppercase transition-colors duration-150 inline-block no-underline pr-[1.4em] hover:text-[#6A48FF]"
+                    className="sm-panel-item relative text-[#212121] font-semibold cursor-pointer leading-none uppercase transition-colors duration-150 inline-block no-underline pr-[1.4em] hover:text-primary"
                     style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", letterSpacing: "-1px" }}
                   >
                     <span className="sm-panel-itemLabel inline-block" style={{ transformOrigin: "50% 100%" }}>
@@ -317,7 +317,7 @@ export function StaggeredMenu() {
 
             {/* Socials */}
             <div className="sm-socials mt-auto pt-8 flex flex-col gap-3">
-              <h3 className="sm-socials-title m-0 text-sm font-medium" style={{ color: "#6A48FF" }}>Socials</h3>
+              <h3 className="sm-socials-title m-0 text-sm font-medium" style={{ color: "var(--color-primary)" }}>Socials</h3>
               <ul className="list-none m-0 p-0 flex flex-row items-center gap-5 flex-wrap" role="list">
                 {socialItems.map((s) => (
                   <li key={s.label}>
@@ -325,7 +325,7 @@ export function StaggeredMenu() {
                       href={s.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="sm-socials-link text-base font-medium text-[#212121] no-underline hover:text-[#6A48FF] transition-colors"
+                      className="sm-socials-link text-base font-medium text-[#212121] no-underline hover:text-primary transition-colors"
                     >
                       {s.label}
                     </a>
@@ -347,7 +347,7 @@ export function StaggeredMenu() {
           right: 0.2em;
           font-size: 14px;
           font-weight: 400;
-          color: #6A48FF;
+          color: var(--color-primary);
           letter-spacing: 0;
           pointer-events: none;
           user-select: none;

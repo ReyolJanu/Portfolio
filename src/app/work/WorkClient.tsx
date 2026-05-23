@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { StaggerContainer, StaggerItem } from "@/components/ui/FadeIn";
 import { Badge } from "@/components/ui/Badge";
-import { projects } from "@/lib/data";
+import type { Project } from "@/lib/types";
 
 type Filter = "all" | "ui-ux" | "development";
 
@@ -15,7 +15,11 @@ const filterLabels: Record<Filter, string> = {
   development: "Development",
 };
 
-export function WorkClient() {
+interface WorkClientProps {
+  projects: Project[];
+}
+
+export function WorkClient({ projects }: WorkClientProps) {
   const [active, setActive] = useState<Filter>("all");
 
   const filtered =
@@ -24,15 +28,15 @@ export function WorkClient() {
   return (
     <>
       {/* Filters */}
-      <div className="flex items-center gap-2 mb-10 border-b border-[#E4E4E7]">
+      <div className="flex items-center gap-2 mb-10">
         {(["all", "ui-ux", "development"] as Filter[]).map((f) => (
           <button
             key={f}
             onClick={() => setActive(f)}
-            className={`relative pb-3 px-1 text-sm font-medium transition-colors ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
               active === f
-                ? "text-[#212121] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-[#212121]"
-                : "text-[#A1A1AA] hover:text-[#212121]"
+                ? "bg-[#212121] text-white"
+                : "bg-[#F4F4F5] text-[#71717A] hover:bg-[#E4E4E7] hover:text-[#212121]"
             }`}
           >
             {filterLabels[f]}

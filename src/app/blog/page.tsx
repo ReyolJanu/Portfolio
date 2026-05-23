@@ -8,15 +8,31 @@ import { blogPosts } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog | Design & Engineering Writing",
   description:
-    "Thoughts on UI/UX design, interface engineering, accessibility, and building digital products.",
+    "Janukshan writes about UI/UX design, interface engineering, accessibility, Next.js, and building digital products. Practical insights from a working designer-developer.",
+  keywords: [
+    "UI/UX design blog", "design engineering articles", "interface design writing",
+    "Next.js blog", "accessibility design", "design systems writing",
+    "product design insights", "frontend development blog", "Janukshan blog",
+  ],
+  alternates: { canonical: "https://janukshan.dev/blog" },
+  openGraph: {
+    url: "https://janukshan.dev/blog",
+    title: "Blog | Design & Engineering Writing — Janukshan",
+    description: "Thoughts on UI/UX design, interface engineering, accessibility, and building digital products.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan Blog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Design & Engineering Writing — Janukshan",
+    description: "Thoughts on UI/UX design, interface engineering, and building digital products.",
+    images: ["/profilepng.png"],
+  },
 };
 
 export default function BlogPage() {
-  const sorted = [...blogPosts].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  const sorted = [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <>
@@ -46,7 +62,7 @@ export default function BlogPage() {
                     <span className="mono text-xs text-[#A1A1AA]">·</span>
                     <span className="mono text-xs text-[#A1A1AA]">{post.readTime}</span>
                   </div>
-                  <h2 className="h3 text-[#212121] group-hover:text-[#6A48FF] transition-colors">
+                  <h2 className="h3 text-[#212121] group-hover:text-primary transition-colors">
                     {post.title}
                   </h2>
                   <p className="text-base text-[#A1A1AA] leading-relaxed max-w-[580px]">

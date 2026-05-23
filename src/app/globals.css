@@ -6,10 +6,14 @@
   --color-muted: #A1A1AA;
   --color-border: #E4E4E7;
   --color-surface: #F4F4F5;
-  --color-action: #6A48FF;
-  --color-action-hover: #5538EE;
+  --color-primary: #6A48FF;
+  --color-primary-hover: #5538EE;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --color-primary-rgb: 106, 72, 255;
 }
 
 *, *::before, *::after {
@@ -39,7 +43,7 @@ body {
   left: 1rem;
   z-index: 9999;
   padding: 0.5rem 1rem;
-  background: #6A48FF;
+  background: var(--color-primary);
   color: white;
   border-radius: 0 0 6px 6px;
   font-size: 0.875rem;

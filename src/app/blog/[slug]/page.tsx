@@ -12,7 +12,7 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }
 
@@ -20,14 +20,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
+  const url = `https://janukshan.dev/blog/${slug}`;
   return {
     title: post.title,
     description: post.description,
+    keywords: [...post.tags, "design blog", "UI/UX", "Janukshan"],
+    authors: [{ name: "Janukshan", url: "https://janukshan.dev" }],
+    alternates: { canonical: url },
     openGraph: {
+      type: "article",
+      url,
       title: post.title,
       description: post.description,
-      type: "article",
       publishedTime: post.date,
+      authors: ["Janukshan"],
+      tags: post.tags,
+      images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: ["/profilepng.png"],
     },
   };
 }
@@ -133,7 +147,7 @@ export default async function BlogPostPage({ params }: Props) {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center rounded-lg bg-[#6A48FF] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#5538EE] transition-colors"
+                  className="inline-flex items-center rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary-hover transition-colors"
                 >
                   Get in touch
                 </Link>

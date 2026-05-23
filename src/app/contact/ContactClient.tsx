@@ -30,7 +30,7 @@ export function ContactClient() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-[#E4E4E7] bg-white px-4 py-3 text-sm text-[#212121] placeholder:text-[#A1A1AA] transition-colors hover:border-[#A1A1AA] focus:border-[#6A48FF] focus:outline-none focus:ring-2 focus:ring-[#6A48FF]/20";
+    "w-full rounded-lg border border-[#E4E4E7] bg-white px-4 py-3 text-sm text-[#212121] placeholder:text-[#A1A1AA] transition-colors hover:border-[#A1A1AA] focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
 
   return (
     <div className="grid gap-16 md:grid-cols-[1.4fr_1fr]">
@@ -38,7 +38,7 @@ export function ContactClient() {
       <FadeIn>
         {status === "sent" ? (
           <div className="rounded-2xl border border-[#E4E4E7] p-10 text-center">
-            <div className="mb-4 text-3xl text-[#6A48FF]">✓</div>
+            <div className="mb-4 text-3xl text-primary">✓</div>
             <h2 className="h3 text-[#212121] mb-2">Message sent</h2>
             <p className="text-base text-[#A1A1AA]">
               Thanks for reaching out. I&apos;ll get back to you within 24 hours.
@@ -48,7 +48,7 @@ export function ContactClient() {
                 setStatus("idle");
                 setForm({ name: "", email: "", subject: "", message: "" });
               }}
-              className="mt-6 text-sm font-medium text-[#6A48FF] hover:text-[#5538EE] transition-colors"
+              className="mt-6 text-sm font-medium text-primary hover:text-primary-hover transition-colors"
             >
               Send another message
             </button>
@@ -132,7 +132,7 @@ export function ContactClient() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-lg bg-[#6A48FF] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#5538EE] disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-hover disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {status === "sending" ? "Sending…" : <><span>Send message</span> <FiArrowRight /></>}
             </button>
@@ -146,7 +146,7 @@ export function ContactClient() {
           <div>
             <h3 className="h3 text-[#212121] mb-2">Availability</h3>
             <div className="flex items-center gap-2 mb-3">
-              <span className="inline-flex h-2 w-2 rounded-full bg-[#6A48FF]" />
+              <span className="inline-flex h-2 w-2 rounded-full bg-primary" />
               <span className="text-sm text-[#212121] font-medium">Available for projects</span>
             </div>
             <p className="text-sm text-[#A1A1AA] leading-relaxed">
@@ -158,7 +158,7 @@ export function ContactClient() {
             <h3 className="h3 text-[#212121] mb-4">Email directly</h3>
             <a
               href="mailto:janukshan@ascentis.tech"
-              className="text-sm font-medium text-[#6A48FF] link-underline hover:text-[#5538EE] transition-colors"
+              className="text-sm font-medium text-primary link-underline hover:text-primary-hover transition-colors"
             >
               janukshan@ascentis.tech
             </a>
@@ -176,7 +176,7 @@ export function ContactClient() {
                     className="flex items-center justify-between text-sm text-[#A1A1AA] hover:text-[#212121] transition-colors group"
                   >
                     <span>{label}</span>
-                    <span className="mono text-xs text-[#A1A1AA] group-hover:text-[#6A48FF] transition-colors">
+                    <span className="mono text-xs text-[#A1A1AA] group-hover:text-primary transition-colors">
                       {handle}
                     </span>
                   </a>
@@ -190,7 +190,7 @@ export function ContactClient() {
               Not sure what you need?{" "}
               <Link
                 href="/services"
-                className="text-[#6A48FF] hover:text-[#5538EE] transition-colors"
+                className="text-primary hover:text-primary-hover transition-colors"
               >
                 Browse my services
               </Link>{" "}

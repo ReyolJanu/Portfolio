@@ -5,9 +5,27 @@ import { BorderedSection } from "@/components/ui/BorderedSection";
 import { ContactClient } from "./ContactClient";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Hire Janukshan — Freelance UI/UX Designer",
   description:
-    "Get in touch to discuss your project. I'm available for freelance UI/UX design and interface engineering work.",
+    "Get in touch with Janukshan to discuss your project. Available for freelance UI/UX design, interface engineering, and design system work. Based in Sri Lanka, working globally.",
+  keywords: [
+    "hire UI/UX designer", "freelance designer contact", "contact Janukshan",
+    "hire interface engineer", "freelance Next.js developer", "design project inquiry",
+    "UI/UX design quote", "hire freelance designer Sri Lanka",
+  ],
+  alternates: { canonical: "https://janukshan.dev/contact" },
+  openGraph: {
+    url: "https://janukshan.dev/contact",
+    title: "Contact Janukshan | Freelance UI/UX Designer & Interface Engineer",
+    description: "Available for freelance UI/UX design and interface engineering projects. Get in touch to start a conversation.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Contact Janukshan" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Janukshan | Freelance UI/UX Designer",
+    description: "Available for freelance UI/UX design and interface engineering projects.",
+    images: ["/profilepng.png"],
+  },
 };
 
 export default function ContactPage() {

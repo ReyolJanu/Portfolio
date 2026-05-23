@@ -8,9 +8,27 @@ import { BorderedSection } from "@/components/ui/BorderedSection";
 import { FiArrowRight } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Janukshan | UI/UX Designer & Interface Engineer",
   description:
-    "Freelance UI/UX designer and interface engineer based in Sri Lanka. Learn about my background, process, and what drives my work.",
+    "Learn about Janukshan — a freelance UI/UX designer and interface engineer based in Sri Lanka with expertise in Figma, Next.js, React, and design systems. Available for freelance projects.",
+  keywords: [
+    "about Janukshan", "UI/UX designer background", "freelance designer Sri Lanka",
+    "design engineer", "Figma expert", "Next.js developer", "product designer",
+    "design systems", "interface engineer", "frontend developer Sri Lanka",
+  ],
+  alternates: { canonical: "https://janukshan.dev/about" },
+  openGraph: {
+    url: "https://janukshan.dev/about",
+    title: "About Janukshan | UI/UX Designer & Interface Engineer",
+    description: "Freelance UI/UX designer and interface engineer based in Sri Lanka. Figma, Next.js, React, and design systems.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — UI/UX Designer" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Janukshan | UI/UX Designer & Interface Engineer",
+    description: "Freelance UI/UX designer and interface engineer based in Sri Lanka.",
+    images: ["/profilepng.png"],
+  },
 };
 
 const designTools = ["Figma", "Adobe XD", "Adobe Illustrator", "Canva", "Framer"];
@@ -120,7 +138,7 @@ export default function AboutPage() {
                 <div className="pt-4 flex flex-wrap gap-3">
                   <Link
                     href="/work"
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#6A48FF] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#5538EE] transition-colors"
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-hover transition-colors"
                   >
                     View my work
                   </Link>
@@ -204,7 +222,7 @@ export default function AboutPage() {
               </div>
               <Link
                 href="/contact"
-                className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-[#6A48FF] px-6 py-3 text-sm font-medium text-white hover:bg-[#5538EE] transition-colors"
+                className="shrink-0 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-primary-hover transition-colors"
               >
                 Get in touch <FiArrowRight />
               </Link>

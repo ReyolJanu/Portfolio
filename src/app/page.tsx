@@ -7,22 +7,33 @@ import { BorderedSection } from "@/components/ui/BorderedSection";
 import { ToolsStack } from "@/components/sections/ToolsStack";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
-import { projects, services } from "@/lib/data";
+import { projects as allProjects, services } from "@/lib/data";
 import { FiArrowRight } from "react-icons/fi";
 import TrueFocus from "@/components/ui/TrueFocus";
 
 export const metadata: Metadata = {
-  title: "Janukshan, UI/UX Designer & Interface Engineer",
+  title: "Janukshan | UI/UX Designer & Interface Engineer",
   description:
-    "Freelance UI/UX designer and interface engineer crafting clean, intuitive digital products.",
+    "Janukshan is a freelance UI/UX designer and interface engineer based in Sri Lanka. I craft clean, intuitive digital products — from wireframes to production-ready interfaces using Figma, Next.js, and React.",
+  keywords: [
+    "UI/UX designer", "interface engineer", "freelance designer Sri Lanka",
+    "Figma", "Next.js", "React", "product design", "design systems",
+  ],
+  alternates: { canonical: "https://janukshan.dev" },
+  openGraph: {
+    url: "https://janukshan.dev",
+    title: "Janukshan | UI/UX Designer & Interface Engineer",
+    description: "Freelance UI/UX designer and interface engineer based in Sri Lanka. Crafting clean, intuitive digital products.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — UI/UX Designer" }],
+  },
 };
 
 export default function HomePage() {
-  const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
+  const featuredProjects = allProjects.filter((p) => p.featured).slice(0, 3);
 
   return (
     <>
-      {/* JSON-LD */}
+      {/* JSON-LD — Person */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -31,13 +42,35 @@ export default function HomePage() {
             "@type": "Person",
             name: "Janukshan",
             url: "https://janukshan.dev",
+            image: "https://janukshan.dev/profilepng.png",
             jobTitle: "UI/UX Designer & Interface Engineer",
-            description: "Freelance UI/UX designer and interface engineer.",
+            description: "Freelance UI/UX designer and interface engineer based in Sri Lanka, crafting clean, intuitive digital products.",
+            address: { "@type": "PostalAddress", addressCountry: "LK" },
+            knowsAbout: ["UI/UX Design", "Figma", "Next.js", "React", "TypeScript", "Design Systems", "Interface Engineering"],
             sameAs: [
               "https://github.com/ReyolJanu",
               "https://linkedin.com/in/janukshan",
               "https://dribbble.com/janukshan",
             ],
+            offers: {
+              "@type": "Offer",
+              description: "Freelance UI/UX design and interface engineering services",
+              url: "https://janukshan.dev/services",
+            },
+          }),
+        }}
+      />
+      {/* JSON-LD — WebSite */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Janukshan",
+            url: "https://janukshan.dev",
+            description: "Portfolio of Janukshan — UI/UX Designer & Interface Engineer",
+            author: { "@type": "Person", name: "Janukshan" },
           }),
         }}
       />
@@ -51,7 +84,7 @@ export default function HomePage() {
             <div className="pt-20 pb-16 md:pt-24 md:pb-20 pr-0 md:pr-12">
               <FadeIn direction="up">
                 <h1 className="h1 text-[#212121]">
-                  Crafting <span className="text-[#6A48FF]">interfaces</span><br />
+                  Crafting <span className="text-primary">interfaces</span><br />
                   that feel inevitable.
                 </h1>
               </FadeIn>
@@ -63,8 +96,8 @@ export default function HomePage() {
                     separator="|"
                     manualMode={false}
                     blurAmount={5}
-                    borderColor="#6A48FF"
-                    glowColor="rgba(106,72,255,0.6)"
+                    borderColor="var(--color-primary)"
+                    glowColor="rgba(var(--color-primary-rgb), 0.6)"
                     animationDuration={0.5}
                     pauseBetweenAnimations={1.5}
                   />
@@ -82,7 +115,7 @@ export default function HomePage() {
                 <div className="mt-8">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#6A48FF] px-6 py-3 text-sm font-semibold text-white hover:bg-[#5538EE] transition-colors"
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-hover transition-colors"
                   >
                     Lets collaborate <FiArrowRight />
                   </Link>
@@ -103,7 +136,7 @@ export default function HomePage() {
                     width: "500px",
                     height: "500px",
                     background:
-                      "radial-gradient(circle, rgba(106,72,255,0.24) 0%, rgba(106,72,255,0.08) 50%, transparent 72%)",
+                      "radial-gradient(circle, rgba(var(--color-primary-rgb),0.24) 0%, rgba(var(--color-primary-rgb),0.08) 50%, transparent 72%)",
                     borderRadius: "50%",
                     filter: "blur(10px)",
                   }}
@@ -133,8 +166,8 @@ export default function HomePage() {
         <Container>
           <FadeIn>
             <div className="mb-4 text-center">
-              <h2 className="h2 text-[#212121]"><span className="text-[#6A48FF]">Selected</span> work</h2>
-              <p className="body-lg text-[#A1A1AA] mt-3 max-w-[480px] mx-auto">
+              <h2 className="h2 text-[#212121]"><span className="text-primary">Selected</span> work</h2>
+              <p className="body-lg text-[#A1A1AA] mt-3 whitespace-nowrap mx-auto">
                 From design systems to full-stack products, here&apos;s a look at recent projects.
               </p>
             </div>
@@ -145,8 +178,8 @@ export default function HomePage() {
             <div className="mt-10 flex flex-col gap-8">
               {featuredProjects.map((project) => {
                 const isUiUx = project.category === "ui-ux";
-                const accentColor = isUiUx ? "#6A48FF" : "#0EA5E9";
-                const accentBg = isUiUx ? "rgba(106,72,255,0.08)" : "rgba(14,165,233,0.08)";
+                const accentColor = isUiUx ? "var(--color-primary)" : "#0EA5E9";
+                const accentBg = isUiUx ? "rgba(var(--color-primary-rgb), 0.08)" : "rgba(14,165,233,0.08)";
                 return (
                   <Link
                     key={project.slug}
@@ -211,12 +244,12 @@ export default function HomePage() {
             <div className="mt-6 flex justify-end">
               <Link
                 href="/work"
-                className="relative inline-flex items-center gap-2 border border-dashed border-[#6A48FF] px-6 py-2.5 text-sm font-bold text-[#6A48FF] transition-colors hover:bg-[#6A48FF]/5"
+                className="relative inline-flex items-center gap-2 border border-dashed border-primary px-6 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary/5"
               >
-                <span aria-hidden className="absolute -top-[3px] -left-[3px] block h-[6px] w-[6px] bg-[#6A48FF]" />
-                <span aria-hidden className="absolute -top-[3px] -right-[3px] block h-[6px] w-[6px] bg-[#6A48FF]" />
-                <span aria-hidden className="absolute -bottom-[3px] -left-[3px] block h-[6px] w-[6px] bg-[#6A48FF]" />
-                <span aria-hidden className="absolute -bottom-[3px] -right-[3px] block h-[6px] w-[6px] bg-[#6A48FF]" />
+                <span aria-hidden className="absolute -top-[3px] -left-[3px] block h-[6px] w-[6px] bg-primary" />
+                <span aria-hidden className="absolute -top-[3px] -right-[3px] block h-[6px] w-[6px] bg-primary" />
+                <span aria-hidden className="absolute -bottom-[3px] -left-[3px] block h-[6px] w-[6px] bg-primary" />
+                <span aria-hidden className="absolute -bottom-[3px] -right-[3px] block h-[6px] w-[6px] bg-primary" />
                 See all projects <FiArrowRight />
               </Link>
             </div>
@@ -227,7 +260,7 @@ export default function HomePage() {
       {/* ─── About Teaser ─────────────────────────────────────── */}
       <BorderedSection className="py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <div className="grid gap-6 md:grid-cols-2 md:items-center">
             <FadeIn direction="left">
               <div className="relative aspect-[3/4] max-w-[400px] overflow-hidden rounded-xl border border-[#E4E4E7] bg-[#F4F4F5]">
                 <Image
@@ -244,7 +277,7 @@ export default function HomePage() {
               <div>
                 <span className="mono text-[#A1A1AA] text-xs mb-4 block">About me</span>
                 <h2 className="h2 text-[#212121] mb-5">
-                  I <span className="text-[#6A48FF]">design and build</span> digital products.
+                  I <span className="text-primary">design and build</span> digital products.
                 </h2>
                 <p className="body-lg text-[#A1A1AA] mb-6">
                   I&apos;m a freelance UI/UX designer and interface engineer based in Sri Lanka.
@@ -258,7 +291,7 @@ export default function HomePage() {
                 </p>
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#6A48FF] link-underline hover:text-[#5538EE] transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary link-underline hover:text-primary-hover transition-colors"
                 >
                   More about me <FiArrowRight />
                 </Link>
@@ -276,7 +309,7 @@ export default function HomePage() {
         <Container>
           <FadeIn>
             <div className="mb-12 text-center">
-              <h2 className="h2 text-[#212121]"><span className="text-[#6A48FF]">What</span> I do</h2>
+              <h2 className="h2 text-[#212121]"><span className="text-primary">What</span> I do</h2>
               <p className="body-lg text-[#A1A1AA] mt-3 max-w-[480px] mx-auto">
                 From wireframes to shipped product, here&apos;s how I help bring ideas to life.
               </p>

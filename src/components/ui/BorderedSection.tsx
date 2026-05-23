@@ -27,7 +27,7 @@ export function BorderedSection({
   topBorder = true,
   bottomBorder = false,
   corners = true,
-  accent = "#6A48FF",
+  accent = "var(--color-primary)",
 }: BorderedSectionProps) {
   return (
     <Tag

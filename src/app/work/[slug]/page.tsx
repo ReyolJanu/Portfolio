@@ -13,7 +13,7 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
@@ -21,24 +21,40 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
+  const url = `https://janukshan.dev/work/${slug}`;
   return {
-    title: project.title,
-    description: project.description,
+    title: `${project.title} | ${project.category === "ui-ux" ? "UI/UX Design" : "Development"} Case Study`,
+    description: `${project.description} — A ${project.year} ${project.role} case study by Janukshan.`,
+    keywords: [...project.tags, "case study", "UI/UX design", "Janukshan", project.role, project.year],
+    authors: [{ name: "Janukshan", url: "https://janukshan.dev" }],
+    alternates: { canonical: url },
     openGraph: {
-      title: project.title,
+      type: "article",
+      url,
+      title: `${project.title} — Case Study by Janukshan`,
       description: project.description,
-      images: [{ url: project.coverImage }],
+      images: [{ url: project.coverImage, width: 1200, height: 630, alt: project.title }],
+      authors: ["Janukshan"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Case Study by Janukshan`,
+      description: project.description,
+      images: [project.coverImage],
     },
   };
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
+
   const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
-  const currentIndex = projects.findIndex((p) => p.slug === slug);
-  const nextProject = projects[(currentIndex + 1) % projects.length];
+  const allProjects = projects;
+
+  const currentIndex = allProjects.findIndex((p) => p.slug === slug);
+  const nextProject = allProjects[(currentIndex + 1) % allProjects.length];
 
   return (
     <>
@@ -58,30 +74,30 @@ export default async function ProjectDetailPage({ params }: Props) {
       />
 
       {/* ─── Header ─────────────────────────────────────────── */}
-      <BorderedSection topBorder={false} corners={false} className="pt-20 pb-10 md:pt-32 md:pb-14">
+      <BorderedSection topBorder={false} corners={false} className="pt-10 pb-10 md:pt-14 md:pb-14 bg-[#333333]">
         <Container>
           <FadeIn>
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 mono text-xs text-[#A1A1AA] hover:text-[#212121] transition-colors mb-8"
+              className="inline-flex items-center gap-2 mono text-xs text-[#212121] bg-white px-3 py-1.5 rounded-lg hover:bg-white/90 transition-colors mb-8"
             >
               ← Back to work
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 mb-5">
-              <Badge variant="default">
+              <Badge variant="default" className="bg-white/10 text-white border-0">
                 {project.category === "ui-ux" ? "UI/UX" : "Development"}
               </Badge>
               <span className="mono text-xs text-[#A1A1AA]">{project.year}</span>
               <span className="mono text-xs text-[#A1A1AA]">· {project.role}</span>
             </div>
 
-            <h1 className="h1 text-[#212121] max-w-[720px] mb-5">{project.title}</h1>
+            <h1 className="h1 text-white max-w-[720px] mb-5">{project.title}</h1>
             <p className="body-lg text-[#A1A1AA] max-w-[540px]">{project.description}</p>
 
             <div className="mt-6 flex flex-wrap gap-2">
               {project.tags.map((tag) => (
-                <Badge key={tag} variant="outline">{tag}</Badge>
+                <Badge key={tag} variant="outline" className="border-white/20 text-[#A1A1AA]">{tag}</Badge>
               ))}
             </div>
           </FadeIn>
@@ -89,7 +105,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       </BorderedSection>
 
       {/* ─── Cover image ────────────────────────────────────── */}
-      <BorderedSection className="pb-16 md:pb-24">
+      <BorderedSection className="pt-12 pb-16 md:pt-16 md:pb-24">
         <Container>
           <FadeIn delay={0.1}>
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-[#E4E4E7] bg-[#F4F4F5]">
@@ -109,37 +125,51 @@ export default async function ProjectDetailPage({ params }: Props) {
       {/* ─── Overview ───────────────────────────────────────── */}
       <BorderedSection className="py-16 md:py-24">
         <Container>
-          <div className="grid gap-12 md:grid-cols-[2fr_1fr]">
+          <div className="grid gap-10 md:grid-cols-[1fr_320px]">
+
+            {/* Left: content */}
             <FadeIn>
-              <div className="space-y-6">
-                <div>
-                  <span className="mono text-[#A1A1AA] text-xs mb-3 block">Overview</span>
-                  <h2 className="h2 text-[#212121] mb-4">The project</h2>
-                  <p className="text-base text-[#A1A1AA] leading-relaxed">{project.overview}</p>
+              <div className="space-y-5">
+                {/* Overview */}
+                <div className="rounded-2xl border border-[#E4E4E7] bg-white p-6 md:p-8">
+                  <span className="mono text-[#A1A1AA] text-xs mb-2 block">Overview</span>
+                  <h2 className="h2 text-[#212121] mb-3">The project</h2>
+                  <p className="text-base text-[#52525B] leading-relaxed">{project.overview}</p>
                 </div>
-                <div>
-                  <h3 className="h3 text-[#212121] mb-3 mt-8">The challenge</h3>
-                  <p className="text-base text-[#A1A1AA] leading-relaxed">{project.challenge}</p>
-                </div>
-                <div>
-                  <h3 className="h3 text-[#212121] mb-3 mt-8">The solution</h3>
-                  <p className="text-base text-[#A1A1AA] leading-relaxed">{project.solution}</p>
+
+                {/* Challenge + Solution side by side on md */}
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div className="rounded-2xl border border-[#E4E4E7] bg-white p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-md bg-orange-50 text-orange-500 text-xs font-bold">!</span>
+                      <h3 className="text-sm font-semibold text-[#212121]">The challenge</h3>
+                    </div>
+                    <p className="text-sm text-[#52525B] leading-relaxed">{project.challenge}</p>
+                  </div>
+                  <div className="rounded-2xl border border-[#E4E4E7] bg-white p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="flex h-6 w-6 items-center justify-center rounded-md bg-green-50 text-green-600 text-xs font-bold">✓</span>
+                      <h3 className="text-sm font-semibold text-[#212121]">The solution</h3>
+                    </div>
+                    <p className="text-sm text-[#52525B] leading-relaxed">{project.solution}</p>
+                  </div>
                 </div>
               </div>
             </FadeIn>
 
+            {/* Right: meta card */}
             <FadeIn delay={0.1}>
-              <div className="space-y-6 md:pt-8">
-                <div>
-                  <span className="mono text-[#A1A1AA] text-xs mb-2 block">Year</span>
-                  <p className="text-sm font-medium text-[#212121]">{project.year}</p>
+              <div className="rounded-2xl border border-[#E4E4E7] bg-white p-6 divide-y divide-[#E4E4E7] md:sticky md:top-24">
+                <div className="pb-4">
+                  <span className="mono text-[#A1A1AA] text-xs mb-1 block">Year</span>
+                  <p className="text-sm font-semibold text-[#212121]">{project.year}</p>
                 </div>
-                <div>
-                  <span className="mono text-[#A1A1AA] text-xs mb-2 block">Role</span>
-                  <p className="text-sm font-medium text-[#212121]">{project.role}</p>
+                <div className="py-4">
+                  <span className="mono text-[#A1A1AA] text-xs mb-1 block">Role</span>
+                  <p className="text-sm font-semibold text-[#212121]">{project.role}</p>
                 </div>
-                <div>
-                  <span className="mono text-[#A1A1AA] text-xs mb-2 block">Stack</span>
+                <div className="pt-4">
+                  <span className="mono text-[#A1A1AA] text-xs mb-3 block">Stack</span>
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
                       <Badge key={tag} variant="default">{tag}</Badge>
@@ -147,17 +177,20 @@ export default async function ProjectDetailPage({ params }: Props) {
                   </div>
                 </div>
                 {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-[#6A48FF] hover:text-[#5538EE] transition-colors"
-                  >
-                    Visit project ↗
-                  </a>
+                  <div className="pt-4">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#212121] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#333333] transition-colors"
+                    >
+                      Visit project ↗
+                    </a>
+                  </div>
                 )}
               </div>
             </FadeIn>
+
           </div>
         </Container>
       </BorderedSection>
@@ -200,11 +233,11 @@ export default async function ProjectDetailPage({ params }: Props) {
               <Badge variant="default">
                 {nextProject.category === "ui-ux" ? "UI/UX" : "Development"}
               </Badge>
-              <h2 className="h2 text-[#212121] group-hover:text-[#6A48FF] transition-colors">
+              <h2 className="h2 text-[#212121] group-hover:text-primary transition-colors">
                 {nextProject.title}
               </h2>
               <p className="text-base text-[#A1A1AA]">{nextProject.description}</p>
-              <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-[#6A48FF]">View project <FiArrowRight /></span>
+              <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-primary">View project <FiArrowRight /></span>
             </Link>
           </FadeIn>
         </Container>

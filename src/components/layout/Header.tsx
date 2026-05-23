@@ -42,8 +42,8 @@ export function Header() {
       {/* Bottom-corner accent marks at header/content junction */}
       {scrolled && (
         <>
-          <span aria-hidden className="pointer-events-none absolute -bottom-px -left-px block h-3 w-3 border-b-2 border-l-2 border-[#6A48FF]" />
-          <span aria-hidden className="pointer-events-none absolute -bottom-px -right-px block h-3 w-3 border-b-2 border-r-2 border-[#6A48FF]" />
+          <span aria-hidden className="pointer-events-none absolute -bottom-px -left-px block h-3 w-3 border-b-2 border-l-2 border-primary" />
+          <span aria-hidden className="pointer-events-none absolute -bottom-px -right-px block h-3 w-3 border-b-2 border-r-2 border-primary" />
         </>
       )}
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 md:px-12">
@@ -77,7 +77,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-lg bg-[#6A48FF] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5538EE] focus-visible:ring-2 focus-visible:ring-[#6A48FF] focus-visible:ring-offset-2"
+            className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-hover focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
             Get in touch
           </Link>
@@ -134,7 +134,7 @@ export function Header() {
                     <Link
                       href={href}
                       className={`block py-3 text-2xl font-semibold tracking-tight transition-colors ${
-                        active ? "text-[#6A48FF]" : "text-[#212121]"
+                        active ? "text-primary" : "text-[#212121]"
                       }`}
                     >
                       {label}
@@ -150,7 +150,7 @@ export function Header() {
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center rounded-lg bg-[#6A48FF] px-6 py-3 text-base font-medium text-white"
+                  className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-base font-medium text-white"
                 >
                   Get in touch
                 </Link>

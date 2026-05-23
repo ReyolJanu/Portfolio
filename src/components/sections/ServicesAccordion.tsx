@@ -24,7 +24,7 @@ function IllustrationUIUX() {
       {/* Front card – floats up/down */}
       <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" keyTimes="0;0.5;1" />
-        <rect x="160" y="60" width="210" height="220" rx="16" fill="#6A48FF" />
+        <rect x="160" y="60" width="210" height="220" rx="16" fill="var(--color-primary)" />
         <circle cx="195" cy="102" r="22" fill="white" opacity="0.2" />
         <circle cx="195" cy="102" r="14" fill="white" opacity="0.35" />
         {/* Toggle – pulses */}
@@ -56,7 +56,7 @@ function IllustrationUIUX() {
       </g>
 
       {/* Floating dots */}
-      <circle cx="370" cy="30" r="6" fill="#6A48FF">
+      <circle cx="370" cy="30" r="6" fill="var(--color-primary)">
         <animateTransform attributeName="transform" type="translate" values="0,0; -3,5; 0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
       </circle>
       <circle cx="355" cy="50" r="4" fill="#8B6FFF" opacity="0.6">
@@ -78,7 +78,7 @@ function IllustrationDesignEngineering() {
       <circle cx="30" cy="46" r="6" fill="#A1A1AA" opacity="0.5" />
       <circle cx="48" cy="46" r="6" fill="#A1A1AA" opacity="0.5" />
       <rect x="70" y="40" width="80" height="12" rx="4" fill="#A1A1AA" opacity="0.4" />
-      <rect x="22" y="76" width="146" height="52" rx="8" fill="#6A48FF" opacity="0.85" />
+      <rect x="22" y="76" width="146" height="52" rx="8" fill="var(--color-primary)" opacity="0.85" />
       <rect x="32" y="88" width="80" height="10" rx="4" fill="white" opacity="0.7" />
       <rect x="32" y="104" width="55" height="8" rx="4" fill="white" opacity="0.4" />
       <rect x="32" y="116" width="35" height="16" rx="6" fill="white" opacity="0.5" />
@@ -91,8 +91,8 @@ function IllustrationDesignEngineering() {
       <rect x="108" y="178" width="50" height="7" rx="3" fill="#A1A1AA" />
       <rect x="108" y="189" width="38" height="5" rx="3" fill="#C4C4C8" />
       <rect x="22" y="208" width="146" height="28" rx="6" fill="#B8A9E8" opacity="0.5" />
-      <rect x="32" y="217" width="80" height="8" rx="4" fill="#6A48FF" opacity="0.5" />
-      <rect x="22" y="246" width="32" height="14" rx="4" fill="#6A48FF" />
+      <rect x="32" y="217" width="80" height="8" rx="4" fill="var(--color-primary)" opacity="0.5" />
+      <rect x="22" y="246" width="32" height="14" rx="4" fill="var(--color-primary)" />
       <rect x="60" y="246" width="32" height="14" rx="4" fill="#8B6FFF" />
       <rect x="98" y="246" width="32" height="14" rx="4" fill="#B8A9E8" />
       <rect x="136" y="246" width="32" height="14" rx="4" fill="#212121" />
@@ -100,7 +100,7 @@ function IllustrationDesignEngineering() {
       {/* Arrow – slides right */}
       <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 8,0; 0,0" dur="1.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
-        <rect x="192" y="130" width="46" height="28" rx="14" fill="#6A48FF" />
+        <rect x="192" y="130" width="46" height="28" rx="14" fill="var(--color-primary)" />
         <polyline points="204,144 224,144" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
         <polyline points="218,138 226,144 218,150" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </g>
@@ -114,9 +114,9 @@ function IllustrationDesignEngineering() {
         <circle cx="282" cy="46" r="5" fill="#A1A1AA" opacity="0.3" />
         <circle cx="298" cy="46" r="5" fill="#A1A1AA" opacity="0.3" />
         <rect x="330" y="38" width="55" height="16" rx="5" fill="#2a2a40" />
-        <rect x="337" y="43" width="40" height="6" rx="2" fill="#6A48FF" opacity="0.6" />
+        <rect x="337" y="43" width="40" height="6" rx="2" fill="var(--color-primary)" opacity="0.6" />
         {/* Code lines fade in staggered */}
-        <rect x="262" y="76" width="60" height="7" rx="3" fill="#6A48FF" opacity="0.5">
+        <rect x="262" y="76" width="60" height="7" rx="3" fill="var(--color-primary)" opacity="0.5">
           <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.4s" begin="0s" repeatCount="indefinite" />
         </rect>
         <rect x="326" y="76" width="55" height="7" rx="3" fill="#8B6FFF" opacity="0.4">
@@ -128,7 +128,7 @@ function IllustrationDesignEngineering() {
         <rect x="262" y="108" width="32" height="7" rx="3" fill="#A1A1AA" opacity="0.4">
           <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.4s" begin="0.6s" repeatCount="indefinite" />
         </rect>
-        <rect x="300" y="108" width="50" height="7" rx="3" fill="#6A48FF" opacity="0.4">
+        <rect x="300" y="108" width="50" height="7" rx="3" fill="var(--color-primary)" opacity="0.4">
           <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.4s" begin="0.8s" repeatCount="indefinite" />
         </rect>
         <rect x="276" y="124" width="42" height="7" rx="3" fill="#A1A1AA" opacity="0.3">
@@ -141,17 +141,17 @@ function IllustrationDesignEngineering() {
         <rect x="276" y="172" width="28" height="7" rx="3" fill="#C4C4C8" opacity="0.3" />
         <rect x="262" y="188" width="12" height="7" rx="3" fill="#A1A1AA" opacity="0.3" />
         <rect x="248" y="246" width="145" height="24" rx="8" fill="#2a2a40" />
-        <rect x="258" y="252" width="115" height="6" rx="3" fill="#6A48FF" opacity="0.4" />
+        <rect x="258" y="252" width="115" height="6" rx="3" fill="var(--color-primary)" opacity="0.4" />
       </g>
 
       {/* Top pills */}
       <rect x="248" y="8" width="58" height="20" rx="10" fill="#E4E4E7" />
       <rect x="262" y="13" width="30" height="8" rx="4" fill="#A1A1AA" opacity="0.6" />
-      <rect x="318" y="8" width="58" height="20" rx="10" fill="#6A48FF" />
+      <rect x="318" y="8" width="58" height="20" rx="10" fill="var(--color-primary)" />
       <rect x="332" y="13" width="30" height="8" rx="4" fill="white" opacity="0.8" />
 
       {/* Floating dots */}
-      <circle cx="216" cy="34" r="5" fill="#6A48FF" opacity="0.5">
+      <circle cx="216" cy="34" r="5" fill="var(--color-primary)" opacity="0.5">
         <animateTransform attributeName="transform" type="translate" values="0,0; 0,5; 0,0" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
       </circle>
       <circle cx="228" cy="50" r="3" fill="#8B6FFF" opacity="0.4">
@@ -171,14 +171,14 @@ function IllustrationInterfaceDev() {
       <circle cx="70" cy="38" r="6" fill="#A1A1AA" opacity="0.25" />
       <circle cx="88" cy="38" r="6" fill="#A1A1AA" opacity="0.25" />
       <rect x="140" y="28" width="120" height="18" rx="9" fill="#2a2a40" />
-      <rect x="150" y="34" width="80" height="6" rx="3" fill="#6A48FF" opacity="0.4" />
-      <circle cx="348" cy="38" r="5" fill="#6A48FF" opacity="0.5">
+      <rect x="150" y="34" width="80" height="6" rx="3" fill="var(--color-primary)" opacity="0.4" />
+      <circle cx="348" cy="38" r="5" fill="var(--color-primary)" opacity="0.5">
         <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" />
       </circle>
 
       {/* File tree – static */}
       <rect x="30" y="56" width="120" height="214" rx="0" fill="#16162a" />
-      <rect x="42" y="72" width="55" height="8" rx="3" fill="#6A48FF" opacity="0.6" />
+      <rect x="42" y="72" width="55" height="8" rx="3" fill="var(--color-primary)" opacity="0.6" />
       <rect x="52" y="90" width="75" height="7" rx="3" fill="#8B6FFF" opacity="0.4" />
       <rect x="62" y="104" width="50" height="6" rx="3" fill="#A1A1AA" opacity="0.35" />
       <rect x="62" y="116" width="45" height="6" rx="3" fill="#A1A1AA" opacity="0.35" />
@@ -194,9 +194,9 @@ function IllustrationInterfaceDev() {
       <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="3.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" keyTimes="0;0.5;1" />
         <rect x="158" y="64" width="204" height="100" rx="10" fill="#2a2a40" />
-        <rect x="166" y="72" width="40" height="8" rx="3" fill="#6A48FF" opacity="0.6" />
-        <rect x="344" y="70" width="12" height="12" rx="3" fill="#6A48FF" opacity="0.5" />
-        <rect x="166" y="90" width="188" height="64" rx="8" fill="#6A48FF" opacity="0.7" />
+        <rect x="166" y="72" width="40" height="8" rx="3" fill="var(--color-primary)" opacity="0.6" />
+        <rect x="344" y="70" width="12" height="12" rx="3" fill="var(--color-primary)" opacity="0.5" />
+        <rect x="166" y="90" width="188" height="64" rx="8" fill="var(--color-primary)" opacity="0.7" />
         <circle cx="186" cy="114" r="12" fill="white" opacity="0.3" />
         <rect x="204" y="108" width="80" height="8" rx="4" fill="white" opacity="0.5" />
         <rect x="204" y="120" width="55" height="6" rx="3" fill="white" opacity="0.3" />
@@ -208,7 +208,7 @@ function IllustrationInterfaceDev() {
 
       {/* Code panel – fading lines */}
       <rect x="158" y="176" width="204" height="80" rx="10" fill="#2a2a40" />
-      <rect x="166" y="185" width="55" height="7" rx="3" fill="#6A48FF" opacity="0.5" />
+      <rect x="166" y="185" width="55" height="7" rx="3" fill="var(--color-primary)" opacity="0.5" />
       <rect x="166" y="200" width="100" height="6" rx="3" fill="#8B6FFF" opacity="0.4">
         <animate attributeName="width" values="100;130;100" dur="3s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
       </rect>
@@ -224,7 +224,7 @@ function IllustrationInterfaceDev() {
       {/* Floating badges */}
       <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 3,-5; 0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
-        <rect x="360" y="120" width="50" height="22" rx="8" fill="#6A48FF" />
+        <rect x="360" y="120" width="50" height="22" rx="8" fill="var(--color-primary)" />
         <circle cx="369" cy="131" r="5" fill="white" opacity="0.8" />
         <rect x="378" y="127" width="25" height="6" rx="3" fill="white" opacity="0.8" />
       </g>
@@ -236,12 +236,12 @@ function IllustrationInterfaceDev() {
 
       {/* Status pills */}
       <rect x="60" y="277" width="100" height="20" rx="10" fill="#E4E4E7" />
-      <circle cx="74" cy="287" r="4" fill="#6A48FF" opacity="0.6">
+      <circle cx="74" cy="287" r="4" fill="var(--color-primary)" opacity="0.6">
         <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
       </circle>
       <rect x="82" y="283" width="66" height="6" rx="3" fill="#A1A1AA" opacity="0.5" />
       <rect x="180" y="277" width="88" height="20" rx="10" fill="#E4E4E7" />
-      <circle cx="194" cy="287" r="4" fill="#6A48FF" opacity="0.6">
+      <circle cx="194" cy="287" r="4" fill="var(--color-primary)" opacity="0.6">
         <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="0.75s" repeatCount="indefinite" />
       </circle>
       <rect x="202" y="283" width="54" height="6" rx="3" fill="#A1A1AA" opacity="0.5" />
@@ -257,9 +257,9 @@ function IllustrationBrandIdentity() {
       <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="3.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" keyTimes="0;0.5;1" />
         <rect x="10" y="10" width="120" height="130" rx="12" fill="#E4E4E7" />
-        <circle cx="70" cy="58" r="30" fill="#6A48FF" opacity="0.7" />
+        <circle cx="70" cy="58" r="30" fill="var(--color-primary)" opacity="0.7" />
         <circle cx="70" cy="58" r="16" fill="white" opacity="0.8" />
-        <ellipse cx="70" cy="58" rx="6" ry="9" fill="#6A48FF" opacity="0.9" />
+        <ellipse cx="70" cy="58" rx="6" ry="9" fill="var(--color-primary)" opacity="0.9" />
         <rect x="22" y="100" width="96" height="8" rx="4" fill="#A1A1AA" opacity="0.5" />
         <rect x="22" y="114" width="72" height="6" rx="3" fill="#C4C4C8" />
         <rect x="22" y="126" width="55" height="6" rx="3" fill="#C4C4C8" />
@@ -267,18 +267,18 @@ function IllustrationBrandIdentity() {
 
       {/* Card 2 – typography – static */}
       <rect x="142" y="10" width="120" height="130" rx="12" fill="#E4E4E7" />
-      <text x="158" y="72" fontSize="48" fontWeight="700" fill="#6A48FF" opacity="0.7" fontFamily="serif">Aa</text>
+      <text x="158" y="72" fontSize="48" fontWeight="700" fill="var(--color-primary)" opacity="0.7" fontFamily="serif">Aa</text>
       <text x="210" y="72" fontSize="48" fontWeight="700" fill="#212121" opacity="0.8" fontFamily="serif">Bb</text>
       <rect x="154" y="86" width="96" height="7" rx="3" fill="#A1A1AA" opacity="0.4" />
       <rect x="154" y="100" width="80" height="5" rx="3" fill="#C4C4C8" />
       <rect x="154" y="111" width="65" height="5" rx="3" fill="#C4C4C8" />
-      <rect x="154" y="122" width="90" height="16" rx="8" fill="#6A48FF" />
+      <rect x="154" y="122" width="90" height="16" rx="8" fill="var(--color-primary)" />
       <circle cx="168" cy="130" r="6" fill="white" opacity="0.8" />
       <rect x="178" y="126" width="50" height="8" rx="3" fill="white" opacity="0.8" />
 
       {/* Card 3 – colors – each swatch pulses */}
       <rect x="274" y="10" width="120" height="130" rx="12" fill="#E4E4E7" />
-      <rect x="286" y="22" width="96" height="24" rx="6" fill="#6A48FF">
+      <rect x="286" y="22" width="96" height="24" rx="6" fill="var(--color-primary)">
         <animate attributeName="opacity" values="1;0.7;1" dur="2s" begin="0s" repeatCount="indefinite" />
       </rect>
       <rect x="294" y="28" width="40" height="7" rx="3" fill="white" opacity="0.9" />
@@ -299,14 +299,14 @@ function IllustrationBrandIdentity() {
       {/* Bottom row */}
       {/* Card 4 – shapes – slow rotate on triangle */}
       <rect x="10" y="154" width="170" height="136" rx="12" fill="#E4E4E7" />
-      <rect x="28" y="172" width="58" height="58" rx="10" fill="#6A48FF" opacity="0.8" />
+      <rect x="28" y="172" width="58" height="58" rx="10" fill="var(--color-primary)" opacity="0.8" />
       <rect x="40" y="183" width="18" height="34" rx="4" fill="white" opacity="0.9" />
       <rect x="100" y="172" width="58" height="58" rx="10" fill="#C4C4C8" />
       <g transform="translate(129,207)">
         <animateTransform attributeName="transform" type="rotate" values="0 0 0;8 0 0;0 0 0" dur="4s" additive="sum" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
-        <polygon points="0,-24 -16,12 16,12" fill="#6A48FF" opacity="0.7" />
+        <polygon points="0,-24 -16,12 16,12" fill="var(--color-primary)" opacity="0.7" />
       </g>
-      <rect x="28" y="246" width="58" height="34" rx="8" fill="#6A48FF" opacity="0.5" />
+      <rect x="28" y="246" width="58" height="34" rx="8" fill="var(--color-primary)" opacity="0.5" />
       <rect x="100" y="246" width="58" height="34" rx="8" fill="#C4C4C8" />
       <rect x="116" y="256" width="26" height="14" rx="7" fill="#A1A1AA" opacity="0.5" />
       <text x="38" y="270" fontSize="22" fill="white" opacity="0.9">+</text>
@@ -315,14 +315,14 @@ function IllustrationBrandIdentity() {
       <g>
         <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="4.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" keyTimes="0;0.5;1" />
         <rect x="194" y="154" width="200" height="136" rx="12" fill="#E4E4E7" />
-        <rect x="206" y="168" width="80" height="34" rx="8" fill="#6A48FF" />
+        <rect x="206" y="168" width="80" height="34" rx="8" fill="var(--color-primary)" />
         <rect x="214" y="178" width="55" height="14" rx="4" fill="white" opacity="0.9" />
         <rect x="296" y="168" width="86" height="34" rx="8" fill="#C4C4C8" />
         <rect x="304" y="178" width="60" height="14" rx="4" fill="#A1A1AA" opacity="0.7" />
         <rect x="206" y="214" width="36" height="36" rx="8" fill="#C4C4C8" />
         <circle cx="224" cy="232" r="10" fill="#8B6FFF" opacity="0.6" />
         <rect x="252" y="214" width="130" height="36" rx="8" fill="#212121" opacity="0.85" />
-        <rect x="260" y="224" width="95" height="7" rx="3" fill="#6A48FF" opacity="0.5" />
+        <rect x="260" y="224" width="95" height="7" rx="3" fill="var(--color-primary)" opacity="0.5" />
         <rect x="260" y="235" width="70" height="5" rx="3" fill="#A1A1AA" opacity="0.3" />
         <rect x="206" y="260" width="176" height="22" rx="6" fill="#C4C4C8" opacity="0.6" />
         <rect x="214" y="266" width="100" height="6" rx="3" fill="#A1A1AA" opacity="0.4" />
@@ -332,10 +332,10 @@ function IllustrationBrandIdentity() {
       <circle cx="10" cy="10" r="5" fill="#8B6FFF" opacity="0.5">
         <animateTransform attributeName="transform" type="translate" values="0,0; 4,3; 0,0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
       </circle>
-      <circle cx="390" cy="10" r="5" fill="#6A48FF" opacity="0.5">
+      <circle cx="390" cy="10" r="5" fill="var(--color-primary)" opacity="0.5">
         <animateTransform attributeName="transform" type="translate" values="0,0; -4,3; 0,0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
       </circle>
-      <circle cx="390" cy="290" r="5" fill="#6A48FF" opacity="0.4">
+      <circle cx="390" cy="290" r="5" fill="var(--color-primary)" opacity="0.4">
         <animateTransform attributeName="transform" type="translate" values="0,0; -3,-4; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45,0,0.55,1;0.45,0,0.55,1" />
       </circle>
     </svg>
@@ -379,14 +379,14 @@ export function ServicesAccordion({ services }: Props) {
             <div className="flex w-full items-center gap-4 px-6 py-8 cursor-default transition-colors hover:bg-[#F4F4F5]/60">
               <span
                 className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors"
-                style={{ background: isOpen ? "rgba(106,72,255,0.1)" : "#F4F4F5" }}
+                style={{ background: isOpen ? "rgba(var(--color-primary-rgb), 0.1)" : "#F4F4F5" }}
               >
-                <Icon size={17} color={isOpen ? "#6A48FF" : "#A1A1AA"} />
+                <Icon size={17} color={isOpen ? "var(--color-primary)" : "#A1A1AA"} />
               </span>
-              <span className={`flex-1 text-base font-semibold tracking-tight transition-colors ${isOpen ? "text-[#6A48FF]" : "text-[#212121]"}`}>
+              <span className={`flex-1 text-base font-semibold tracking-tight transition-colors ${isOpen ? "text-primary" : "text-[#212121]"}`}>
                 {service.title}
               </span>
-              <span className="text-[#6A48FF] transition-colors">
+              <span className="text-primary transition-colors">
                 {isOpen ? <FiChevronsUp size={20} /> : <FiChevronsDown size={20} />}
               </span>
             </div>
@@ -415,7 +415,7 @@ export function ServicesAccordion({ services }: Props) {
                       <ul className="space-y-2.5">
                         {service.features.map((feature) => (
                           <li key={feature} className="flex items-center gap-3 text-sm text-[#212121]">
-                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#6A48FF]" />
+                            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                             {feature}
                           </li>
                         ))}

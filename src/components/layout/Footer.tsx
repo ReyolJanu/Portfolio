@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { FiGithub, FiLinkedin, FiFacebook, FiInstagram } from "react-icons/fi";
+import type { IconType } from "react-icons";
 
-const socialLinks = [
-  { href: "https://github.com/ReyolJanu", label: "GitHub" },
-  { href: "https://linkedin.com/in/janukshan", label: "LinkedIn" },
-  { href: "https://dribbble.com/janukshan", label: "Dribbble" },
-  { href: "https://x.com/janukshan", label: "X" },
+const socialLinks: { href: string; label: string; Icon: IconType }[] = [
+  { href: "https://github.com/ReyolJanu", label: "GitHub", Icon: FiGithub },
+  { href: "https://linkedin.com/in/janukshan", label: "LinkedIn", Icon: FiLinkedin },
+  { href: "https://facebook.com/janukshan", label: "Facebook", Icon: FiFacebook },
+  { href: "https://instagram.com/janukshan", label: "Instagram", Icon: FiInstagram },
 ];
 
 const footerLinks = [
@@ -58,14 +60,15 @@ export function Footer() {
               <div>
                 <p className="body-sm text-[#212121] mb-4">Social</p>
                 <ul className="flex flex-col gap-2.5">
-                  {socialLinks.map(({ href, label }) => (
+                  {socialLinks.map(({ href, label, Icon }) => (
                     <li key={href}>
                       <a
                         href={href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-[#A1A1AA] link-underline hover:text-[#212121] transition-colors"
+                        className="inline-flex items-center gap-2 text-sm text-[#A1A1AA] link-underline hover:text-[#212121] transition-colors"
                       >
+                        <Icon size={14} />
                         {label}
                       </a>
                     </li>
