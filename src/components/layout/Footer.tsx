@@ -34,8 +34,8 @@ export function Footer() {
               >
                 Janukshan
               </Link>
-              <p className="text-sm text-[#A1A1AA] max-w-[220px]">
-                UI/UX designer & interface engineer. Available for freelance work.
+              <p className="text-sm text-[#A1A1AA] max-w-[240px]">
+                UI/UX designer & software engineer. Open to roles and freelance work.
               </p>
             </div>
 

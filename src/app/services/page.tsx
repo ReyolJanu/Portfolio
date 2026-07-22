@@ -7,25 +7,25 @@ import { services } from "@/lib/data";
 import { FiArrowRight } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "Services | UI/UX Design & Interface Engineering",
+  title: "Services | UI/UX Design & Full-Stack Engineering",
   description:
-    "Freelance services by Janukshan — UI/UX design, design engineering, component library development, and brand identity. Available for project-based and retainer work.",
+    "Services by Janukshan — UI/UX design, design engineering, full-stack development, and brand identity. Available for project-based, freelance, and full-time work.",
   keywords: [
-    "freelance UI/UX design services", "design engineering services", "interface development",
-    "Figma design", "React component library", "design system services",
-    "brand identity design", "Next.js development", "hire UI/UX designer Sri Lanka",
+    "UI/UX design services", "full-stack development services", "software engineering",
+    "Figma design", "React component library", "Next.js development", "Node.js API development",
+    "design system services", "brand identity design", "hire software engineer Sri Lanka",
   ],
   alternates: { canonical: "https://janukshan.dev/services" },
   openGraph: {
     url: "https://janukshan.dev/services",
-    title: "Services | UI/UX Design & Interface Engineering — Janukshan",
-    description: "Freelance UI/UX design, design engineering, and brand identity services. Available for project-based work.",
-    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — Design Services" }],
+    title: "Services | UI/UX Design & Full-Stack Engineering — Janukshan",
+    description: "UI/UX design, design engineering, full-stack development, and brand identity services.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — Design & Engineering Services" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services | UI/UX Design & Interface Engineering — Janukshan",
-    description: "Freelance UI/UX design, design engineering, and brand identity services.",
+    title: "Services | UI/UX Design & Full-Stack Engineering — Janukshan",
+    description: "UI/UX design, design engineering, full-stack development, and brand identity services.",
     images: ["/profilepng.png"],
   },
 };
@@ -66,7 +66,8 @@ export default function ServicesPage() {
             </h1>
             <p className="body-lg text-[#A1A1AA] mt-6 max-w-[520px]">
               I work with startups and growing teams who need both strong design
-              thinking and the technical ability to execute it.
+              thinking and the full-stack engineering to ship it — from the
+              interface all the way to the API and database.
             </p>
           </FadeIn>
         </Container>

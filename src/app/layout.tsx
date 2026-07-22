@@ -19,25 +19,26 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://janukshan.dev"),
   title: {
-    default: "Janukshan | UI/UX Designer & Interface Engineer",
+    default: "Janukshan | UI/UX Designer & Software Engineer",
     template: "%s | Janukshan",
   },
   description:
-    "Janukshan is a freelance UI/UX designer and interface engineer based in Sri Lanka, crafting clean, intuitive, and technically precise digital products using Figma, Next.js, and React.",
+    "Janukshan is a UI/UX designer and software engineer based in Sri Lanka, designing clean, intuitive interfaces and building the full-stack systems behind them with Figma, Next.js, React, Node.js, and Python.",
   keywords: [
     "UI/UX designer Sri Lanka",
-    "freelance interface engineer",
+    "software engineer Sri Lanka",
+    "full-stack developer",
     "Figma designer",
     "Next.js developer",
     "React developer",
+    "Node.js developer",
+    "Python developer",
     "design engineering",
     "product design",
     "design systems",
-    "frontend developer",
     "Janukshan",
     "portfolio",
-    "web design",
-    "mobile UI design",
+    "web development",
     "Tailwind CSS",
     "TypeScript developer",
   ],
@@ -53,15 +54,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://janukshan.dev",
     siteName: "Janukshan",
-    title: "Janukshan | UI/UX Designer & Interface Engineer",
+    title: "Janukshan | UI/UX Designer & Software Engineer",
     description:
-      "Freelance UI/UX designer and interface engineer based in Sri Lanka. Crafting clean, intuitive digital products with Figma, Next.js, and React.",
+      "UI/UX designer and software engineer based in Sri Lanka. Designing clean interfaces and building the full-stack systems behind them with Figma, Next.js, React, Node.js, and Python.",
     images: [
       {
         url: "/profilepng.png",
         width: 1200,
         height: 630,
-        alt: "Janukshan — UI/UX Designer & Interface Engineer",
+        alt: "Janukshan — UI/UX Designer & Software Engineer",
       },
     ],
   },
@@ -69,9 +70,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@janukshan",
     creator: "@janukshan",
-    title: "Janukshan | UI/UX Designer & Interface Engineer",
+    title: "Janukshan | UI/UX Designer & Software Engineer",
     description:
-      "Freelance UI/UX designer and interface engineer based in Sri Lanka. Crafting clean, intuitive digital products.",
+      "UI/UX designer and software engineer based in Sri Lanka. Designing clean interfaces and building the full-stack systems behind them.",
     images: ["/profilepng.png"],
   },
   robots: {

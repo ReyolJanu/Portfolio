@@ -10,7 +10,7 @@ import { formatDate } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Blog | Design & Engineering Writing",
   description:
-    "Janukshan writes about UI/UX design, interface engineering, accessibility, Next.js, and building digital products. Practical insights from a working designer-developer.",
+    "Janukshan writes about UI/UX design, software engineering, accessibility, Next.js, and building digital products. Practical insights from a working designer-developer.",
   keywords: [
     "UI/UX design blog", "design engineering articles", "interface design writing",
     "Next.js blog", "accessibility design", "design systems writing",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog | Design & Engineering Writing — Janukshan",
-    description: "Thoughts on UI/UX design, interface engineering, and building digital products.",
+    description: "Thoughts on UI/UX design, software engineering, and building digital products.",
     images: ["/profilepng.png"],
   },
 };

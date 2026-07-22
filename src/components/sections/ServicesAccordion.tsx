@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiChevronsDown, FiChevronsUp, FiLayout, FiCode, FiMonitor, FiPenTool } from "react-icons/fi";
+import { FiChevronsDown, FiChevronsUp, FiLayout, FiCode, FiServer, FiPenTool } from "react-icons/fi";
 import type { Service } from "@/lib/types";
 
 /* ── Inline SVG Illustrations ─────────────────────────────────────── */
@@ -343,17 +343,17 @@ function IllustrationBrandIdentity() {
 }
 
 const illustrations: Record<string, React.ReactNode> = {
-  "ux-design":             <IllustrationUIUX />,
-  "design-engineering":    <IllustrationInterfaceDev />,
-  "interface-development": <IllustrationDesignEngineering />,
-  "brand-identity":        <IllustrationBrandIdentity />,
+  "ux-design":               <IllustrationUIUX />,
+  "design-engineering":      <IllustrationDesignEngineering />,
+  "full-stack-development":  <IllustrationInterfaceDev />,
+  "brand-identity":          <IllustrationBrandIdentity />,
 };
 
 const serviceIcons: Record<string, React.ElementType> = {
-  "ux-design":             FiLayout,
-  "design-engineering":    FiCode,
-  "interface-development": FiMonitor,
-  "brand-identity":        FiPenTool,
+  "ux-design":               FiLayout,
+  "design-engineering":      FiCode,
+  "full-stack-development":  FiServer,
+  "brand-identity":          FiPenTool,
 };
 
 interface Props {

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
   const url = `https://janukshan.dev/work/${slug}`;
   return {
-    title: `${project.title} | ${project.category === "ui-ux" ? "UI/UX Design" : "Development"} Case Study`,
+    title: `${project.title} | ${project.category === "ui-ux" ? "UI/UX Design" : "Software Engineering"} Case Study`,
     description: `${project.description} — A ${project.year} ${project.role} case study by Janukshan.`,
     keywords: [...project.tags, "case study", "UI/UX design", "Janukshan", project.role, project.year],
     authors: [{ name: "Janukshan", url: "https://janukshan.dev" }],
@@ -86,7 +86,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <Badge variant="default" className="bg-white/10 text-white border-0">
-                {project.category === "ui-ux" ? "UI/UX" : "Development"}
+                {project.category === "ui-ux" ? "UI/UX" : "Software"}
               </Badge>
               <span className="mono text-xs text-[#A1A1AA]">{project.year}</span>
               <span className="mono text-xs text-[#A1A1AA]">· {project.role}</span>
@@ -231,7 +231,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               className="group flex flex-col gap-3 rounded-xl border border-[#E4E4E7] p-6 md:p-8 hover:border-[#A1A1AA] hover:bg-[#F4F4F5]/40 transition-all duration-200"
             >
               <Badge variant="default">
-                {nextProject.category === "ui-ux" ? "UI/UX" : "Development"}
+                {nextProject.category === "ui-ux" ? "UI/UX" : "Software"}
               </Badge>
               <h2 className="h2 text-[#212121] group-hover:text-primary transition-colors">
                 {nextProject.title}

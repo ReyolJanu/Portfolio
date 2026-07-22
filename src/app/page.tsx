@@ -12,19 +12,19 @@ import { FiArrowRight } from "react-icons/fi";
 import TrueFocus from "@/components/ui/TrueFocus";
 
 export const metadata: Metadata = {
-  title: "Janukshan | UI/UX Designer & Interface Engineer",
+  title: "Janukshan | UI/UX Designer & Software Engineer",
   description:
-    "Janukshan is a freelance UI/UX designer and interface engineer based in Sri Lanka. I craft clean, intuitive digital products — from wireframes to production-ready interfaces using Figma, Next.js, and React.",
+    "Janukshan is a UI/UX designer and software engineer based in Sri Lanka. I design clean, intuitive interfaces and build the full-stack systems behind them — with Figma, Next.js, React, Node.js, and Python.",
   keywords: [
-    "UI/UX designer", "interface engineer", "freelance designer Sri Lanka",
-    "Figma", "Next.js", "React", "product design", "design systems",
+    "UI/UX designer", "software engineer", "full-stack developer Sri Lanka",
+    "Figma", "Next.js", "React", "Node.js", "Python", "product design", "design systems",
   ],
   alternates: { canonical: "https://janukshan.dev" },
   openGraph: {
     url: "https://janukshan.dev",
-    title: "Janukshan | UI/UX Designer & Interface Engineer",
-    description: "Freelance UI/UX designer and interface engineer based in Sri Lanka. Crafting clean, intuitive digital products.",
-    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — UI/UX Designer" }],
+    title: "Janukshan | UI/UX Designer & Software Engineer",
+    description: "UI/UX designer and software engineer based in Sri Lanka. Designing clean interfaces and building the full-stack systems behind them.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — UI/UX Designer & Software Engineer" }],
   },
 };
 
@@ -43,10 +43,10 @@ export default function HomePage() {
             name: "Janukshan",
             url: "https://janukshan.dev",
             image: "https://janukshan.dev/profilepng.png",
-            jobTitle: "UI/UX Designer & Interface Engineer",
-            description: "Freelance UI/UX designer and interface engineer based in Sri Lanka, crafting clean, intuitive digital products.",
+            jobTitle: "UI/UX Designer & Software Engineer",
+            description: "UI/UX designer and software engineer based in Sri Lanka, designing clean interfaces and building the full-stack systems behind them.",
             address: { "@type": "PostalAddress", addressCountry: "LK" },
-            knowsAbout: ["UI/UX Design", "Figma", "Next.js", "React", "TypeScript", "Design Systems", "Interface Engineering"],
+            knowsAbout: ["UI/UX Design", "Software Engineering", "Full-Stack Development", "Figma", "Next.js", "React", "TypeScript", "Node.js", "Python", "PostgreSQL", "MongoDB", "Design Systems", "REST APIs"],
             sameAs: [
               "https://github.com/ReyolJanu",
               "https://linkedin.com/in/janukshan",
@@ -54,7 +54,7 @@ export default function HomePage() {
             ],
             offers: {
               "@type": "Offer",
-              description: "Freelance UI/UX design and interface engineering services",
+              description: "UI/UX design and full-stack software engineering services",
               url: "https://janukshan.dev/services",
             },
           }),
@@ -69,7 +69,7 @@ export default function HomePage() {
             "@type": "WebSite",
             name: "Janukshan",
             url: "https://janukshan.dev",
-            description: "Portfolio of Janukshan — UI/UX Designer & Interface Engineer",
+            description: "Portfolio of Janukshan — UI/UX Designer & Software Engineer",
             author: { "@type": "Person", name: "Janukshan" },
           }),
         }}
@@ -85,14 +85,14 @@ export default function HomePage() {
               <FadeIn direction="up">
                 <h1 className="h1 text-[#212121]">
                   Crafting <span className="text-primary">interfaces</span><br />
-                  that feel inevitable.
+                  and the software behind them.
                 </h1>
               </FadeIn>
 
               <FadeIn direction="up" delay={0.08}>
                 <div className="mt-8">
                   <TrueFocus
-                    sentence="UIUX Designing|Development"
+                    sentence="UI/UX Design|Software Engineering"
                     separator="|"
                     manualMode={false}
                     blurAmount={5}
@@ -106,8 +106,8 @@ export default function HomePage() {
 
               <FadeIn direction="up" delay={0.16}>
                 <p className="body-lg text-[#A1A1AA] mt-14 max-w-[460px]">
-                  Freelance UI/UX designer and interface engineer. I turn complex
-                  ideas into clean, intuitive digital products.
+                  UI/UX designer and software engineer. I design clean, intuitive
+                  interfaces and build the full-stack systems that power them.
                 </p>
               </FadeIn>
 
@@ -144,7 +144,7 @@ export default function HomePage() {
                 {/* Profile — fills height, no frame */}
                 <Image
                   src="/profilepng.png"
-                  alt="Janukshan, UI/UX Designer & Interface Engineer"
+                  alt="Janukshan, UI/UX Designer & Software Engineer"
                   width={560}
                   height={700}
                   className="relative z-10 w-full max-w-[520px] object-contain object-bottom select-none"
@@ -200,7 +200,7 @@ export default function HomePage() {
                           />
                         </span>
                         <span className="mono text-xs font-medium" style={{ color: accentColor }}>
-                          {isUiUx ? "UI/UX Design" : "Development"}
+                          {isUiUx ? "UI/UX Design" : "Software Engineering"}
                         </span>
                       </div>
 
@@ -265,7 +265,7 @@ export default function HomePage() {
               <div className="relative aspect-[3/4] max-w-[400px] overflow-hidden rounded-xl border border-[#E4E4E7] bg-[#F4F4F5]">
                 <Image
                   src="/profilepng.png"
-                  alt="Janukshan, UI/UX Designer & Interface Engineer"
+                  alt="Janukshan, UI/UX Designer & Software Engineer"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 400px"
@@ -280,14 +280,14 @@ export default function HomePage() {
                   I <span className="text-primary">design and build</span> digital products.
                 </h2>
                 <p className="body-lg text-[#A1A1AA] mb-6">
-                  I&apos;m a freelance UI/UX designer and interface engineer based in Sri Lanka.
-                  I work across the full design-to-development lifecycle, from early concepts
-                  to polished, production-ready interfaces.
+                  I&apos;m a UI/UX designer and software engineer based in Sri Lanka. I work
+                  across the full product lifecycle — from research and interface design to
+                  the APIs, databases, and integrations that ship it to production.
                 </p>
                 <p className="text-base text-[#A1A1AA] mb-8">
-                  My background spans product design, design systems, and front-end
-                  engineering. The best interfaces feel inevitable, like they couldn&apos;t
-                  have been built any other way.
+                  My background spans product design, front-end engineering, and full-stack
+                  development. I like owning a feature end to end, so the design intent
+                  survives all the way into working software.
                 </p>
                 <Link
                   href="/about"
@@ -311,7 +311,7 @@ export default function HomePage() {
             <div className="mb-12 text-center">
               <h2 className="h2 text-[#212121]"><span className="text-primary">What</span> I do</h2>
               <p className="body-lg text-[#A1A1AA] mt-3 max-w-[480px] mx-auto">
-                From wireframes to shipped product, here&apos;s how I help bring ideas to life.
+                From interface design to full-stack engineering — here&apos;s how I help bring ideas to life.
               </p>
             </div>
           </FadeIn>
@@ -330,7 +330,7 @@ export default function HomePage() {
               <span className="mono text-[#A1A1AA] text-xs mb-4 block">Let&apos;s collaborate</span>
               <h2 className="h2 text-white mb-5">Have a project in mind?</h2>
               <p className="body-lg text-[#A1A1AA] mb-10 max-w-[480px] mx-auto">
-                I&apos;m currently available for freelance work. Let&apos;s talk about your next project.
+                I&apos;m open to software engineering roles and freelance projects. Let&apos;s talk about what you&apos;re building.
               </p>
               <Link
                 href="/contact"

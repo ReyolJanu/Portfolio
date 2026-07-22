@@ -11,6 +11,11 @@ import {
   SiTypescript,
   SiNodedotjs,
   SiCanva,
+  SiExpress,
+  SiPython,
+  SiPostgresql,
+  SiMongodb,
+  SiSupabase,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 
@@ -28,8 +33,13 @@ const items: Item[] = [
   { name: "React",        Icon: SiReact            },
   { name: "Tailwind CSS", Icon: SiTailwindcss      },
   { name: "TypeScript",   Icon: SiTypescript       },
-  { name: "GitHub",       Icon: SiGithub           },
   { name: "Node.js",      Icon: SiNodedotjs        },
+  { name: "Express",      Icon: SiExpress          },
+  { name: "Python",       Icon: SiPython           },
+  { name: "PostgreSQL",   Icon: SiPostgresql       },
+  { name: "MongoDB",      Icon: SiMongodb          },
+  { name: "Supabase",     Icon: SiSupabase         },
+  { name: "GitHub",       Icon: SiGithub           },
 ];
 
 const doubled = [...items, ...items];
@@ -58,7 +68,7 @@ export function LogoMarquee() {
           style={{ width: "35%" }}
         >
           <p className="text-base md:text-lg font-bold text-[#212121] whitespace-nowrap">
-            Stacks and Tools I using for projects
+            Tools &amp; tech I design and build with
           </p>
         </div>
 

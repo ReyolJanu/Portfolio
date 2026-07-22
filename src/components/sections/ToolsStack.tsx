@@ -9,6 +9,12 @@ import {
   SiTypescript,
   SiNodedotjs,
   SiCanva,
+  SiExpress,
+  SiPython,
+  SiPostgresql,
+  SiMongodb,
+  SiSupabase,
+  SiVercel,
 } from "react-icons/si";
 import Image from "next/image";
 import type { IconType } from "react-icons";
@@ -25,25 +31,29 @@ interface Tool {
 }
 
 const tools: Tool[] = [
+  // Design
   { name: "Figma",        Icon: SiFigma,            color: "#F24E1E", bg: "#FFF5F2" },
   { name: "Framer",       Icon: SiFramer,           color: "#0055FF", bg: "#EEF2FF" },
   { name: "Illustrator",  Icon: SiAdobeillustrator, color: "#FF9A00", bg: "#FFF8EE" },
-  { name: "Spline",       Icon: null, logoSrc: "/spline-logo.png", color: "#0D0D0D", bg: "#F4F4F5" },
   { name: "Canva",        Icon: SiCanva,            color: "#00C4CC", bg: "#F0FEFF" },
+  // Frontend
   { name: "Next.js",      Icon: SiNextdotjs,        color: "#000000", bg: "#F4F4F5" },
   { name: "React",        Icon: SiReact,            color: "#00D8FF", bg: "#F0FEFF" },
-  { name: "Tailwind CSS", Icon: SiTailwindcss,      color: "#06B6D4", bg: "#F0FCFF" },
   { name: "TypeScript",   Icon: SiTypescript,       color: "#3178C6", bg: "#EEF4FF" },
-  { name: "GitHub",       Icon: SiGithub,           color: "#24292F", bg: "#F4F4F5" },
+  { name: "Tailwind CSS", Icon: SiTailwindcss,      color: "#06B6D4", bg: "#F0FCFF" },
+  // Backend & data
   { name: "Node.js",      Icon: SiNodedotjs,        color: "#339933", bg: "#F0FCF0" },
+  { name: "Express",      Icon: SiExpress,          color: "#212121", bg: "#F4F4F5" },
+  { name: "Python",       Icon: SiPython,           color: "#3776AB", bg: "#EEF4FF" },
+  { name: "PostgreSQL",   Icon: SiPostgresql,       color: "#4169E1", bg: "#EEF2FF" },
+  { name: "MongoDB",      Icon: SiMongodb,          color: "#47A248", bg: "#F0FCF0" },
+  { name: "Supabase",     Icon: SiSupabase,         color: "#3ECF8E", bg: "#F0FCF6" },
+  { name: "Vercel",       Icon: SiVercel,           color: "#000000", bg: "#F4F4F5" },
+  { name: "GitHub",       Icon: SiGithub,           color: "#24292F", bg: "#F4F4F5" },
 ];
 
-// 4-column × 3-row grid — index 3 empty for visual rhythm, Spline at index 4
-const grid: (Tool | null)[] = [
-  tools[0], tools[1], tools[2], null,
-  tools[3], tools[4], tools[5], tools[6],
-  tools[7], tools[8], tools[9], tools[10],
-];
+// 4-column × 4-row grid
+const grid: (Tool | null)[] = tools;
 
 export function ToolsStack() {
   return (
@@ -59,7 +69,7 @@ export function ToolsStack() {
                 The <span className="text-primary">tools & Techs</span> <br />I use on projects.
               </h2>
               <p className="text-base text-[#A1A1AA] leading-relaxed mb-6">
-                I design in <span className="text-[#212121] font-medium">Figma</span>, prototype in <span className="text-[#212121] font-medium">Framer</span>, and build with <span className="text-[#212121] font-medium">Next.js</span>, <span className="text-[#212121] font-medium">React</span>, and <span className="text-[#212121] font-medium">Tailwind CSS</span>, covering the full journey from concept to shipped product.
+                I design in <span className="text-[#212121] font-medium">Figma</span>, build front-ends with <span className="text-[#212121] font-medium">Next.js</span> and <span className="text-[#212121] font-medium">React</span>, and back them with <span className="text-[#212121] font-medium">Node.js</span>, <span className="text-[#212121] font-medium">Python</span>, and <span className="text-[#212121] font-medium">PostgreSQL</span> — covering the full journey from concept to shipped product.
               </p>
               <p className="text-sm text-[#A1A1AA] leading-relaxed">
                 Every tool in the stack is chosen deliberately, to move fast, stay consistent, and hand off clean.

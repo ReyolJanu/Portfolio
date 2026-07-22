@@ -8,33 +8,36 @@ import { BorderedSection } from "@/components/ui/BorderedSection";
 import { FiArrowRight } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "About Janukshan | UI/UX Designer & Interface Engineer",
+  title: "About Janukshan | UI/UX Designer & Software Engineer",
   description:
-    "Learn about Janukshan — a freelance UI/UX designer and interface engineer based in Sri Lanka with expertise in Figma, Next.js, React, and design systems. Available for freelance projects.",
+    "Learn about Janukshan — a UI/UX designer and software engineer based in Sri Lanka with experience across Figma, Next.js, React, Node.js, Python, and PostgreSQL. Open to software engineering roles and freelance projects.",
   keywords: [
-    "about Janukshan", "UI/UX designer background", "freelance designer Sri Lanka",
-    "design engineer", "Figma expert", "Next.js developer", "product designer",
-    "design systems", "interface engineer", "frontend developer Sri Lanka",
+    "about Janukshan", "UI/UX designer background", "software engineer Sri Lanka",
+    "full-stack developer", "Figma expert", "Next.js developer", "Node.js developer",
+    "Python developer", "product designer", "design systems", "frontend developer Sri Lanka",
   ],
   alternates: { canonical: "https://janukshan.dev/about" },
   openGraph: {
     url: "https://janukshan.dev/about",
-    title: "About Janukshan | UI/UX Designer & Interface Engineer",
-    description: "Freelance UI/UX designer and interface engineer based in Sri Lanka. Figma, Next.js, React, and design systems.",
-    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — UI/UX Designer" }],
+    title: "About Janukshan | UI/UX Designer & Software Engineer",
+    description: "UI/UX designer and software engineer based in Sri Lanka. Figma, Next.js, React, Node.js, Python, and PostgreSQL.",
+    images: [{ url: "/profilepng.png", width: 1200, height: 630, alt: "Janukshan — UI/UX Designer & Software Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Janukshan | UI/UX Designer & Interface Engineer",
-    description: "Freelance UI/UX designer and interface engineer based in Sri Lanka.",
+    title: "About Janukshan | UI/UX Designer & Software Engineer",
+    description: "UI/UX designer and software engineer based in Sri Lanka.",
     images: ["/profilepng.png"],
   },
 };
 
-const designTools = ["Figma", "Adobe XD", "Adobe Illustrator", "Canva", "Framer"];
-const devStack = [
-  "Next.js", "React", "TypeScript", "Tailwind CSS",
-  "Framer Motion", "Node.js", "MongoDB", "PostgreSQL", "Firebase",
+const skillGroups: { title: string; items: string[] }[] = [
+  { title: "Design & UI/UX", items: ["Figma", "Adobe XD", "Adobe Illustrator", "Canva", "Framer", "Design Systems"] },
+  { title: "Languages", items: ["TypeScript", "JavaScript", "Python", "Java", "PHP", "SQL"] },
+  { title: "Frontend", items: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Bootstrap"] },
+  { title: "Backend & Data", items: ["Node.js", "Express.js", "REST APIs", "PostgreSQL", "MongoDB", "Supabase", "Firebase"] },
+  { title: "Cloud & Tools", items: ["Vercel", "Railway", "Cloudflare R2", "AWS", "Git / GitHub", "Postman"] },
+  { title: "Integrations & AI", items: ["Stripe", "PayHere", "Google OAuth", "JWT", "PyTorch", "Hugging Face"] },
 ];
 
 const values = [
@@ -67,8 +70,8 @@ export default function AboutPage() {
             "@type": "Person",
             name: "Janukshan",
             url: "https://janukshan.dev",
-            jobTitle: "UI/UX Designer & Interface Engineer",
-            description: "Freelance UI/UX designer and interface engineer based in Sri Lanka.",
+            jobTitle: "UI/UX Designer & Software Engineer",
+            description: "UI/UX designer and software engineer based in Sri Lanka.",
             sameAs: [
               "https://github.com/ReyolJanu",
               "https://linkedin.com/in/janukshan",
@@ -84,11 +87,11 @@ export default function AboutPage() {
           <FadeIn>
             <span className="mono text-[#A1A1AA] text-xs mb-5 block">About</span>
             <h1 className="h1 text-[#212121] max-w-[680px]">
-              Designer who builds.<br />Builder who designs.
+              Designer who builds.<br />Engineer who designs.
             </h1>
             <p className="body-lg text-[#A1A1AA] mt-6 max-w-[540px]">
-              I&apos;m Janukshan, a freelance UI/UX designer and interface engineer based in
-              Sri Lanka. I work at the intersection of design and code.
+              I&apos;m Janukshan, a UI/UX designer and software engineer based in Sri Lanka.
+              I work at the intersection of design and code — from the interface to the API.
             </p>
           </FadeIn>
         </Container>
@@ -116,23 +119,28 @@ export default function AboutPage() {
                 <p className="text-base text-[#212121] leading-relaxed">
                   I started designing because I was frustrated with interfaces that felt
                   unintuitive. I learned to code because I wanted to build the things I
-                  was designing, exactly as I designed them.
+                  was designing, exactly as I designed them — and I kept going until I
+                  could ship the whole product, front to back.
                 </p>
                 <p className="text-base text-[#A1A1AA] leading-relaxed">
-                  Today I work across the full design-to-development lifecycle. I take
-                  projects from early concepts through research, wireframes, high-fidelity
-                  UI, and into production code. That end-to-end ownership means fewer
-                  handoff problems and tighter final products.
+                  As a Product Engineer at Ascentis Technology (a France-based startup, remote),
+                  I build features across the stack — from UI implementation to backend logic,
+                  automated PDF and asset-generation pipelines in Python, and AI-assisted
+                  development workflows. Alongside that I work as a freelance full-stack
+                  developer, shipping MERN and Next.js applications for clients.
                 </p>
                 <p className="text-base text-[#A1A1AA] leading-relaxed">
-                  My work spans e-commerce, marketplaces, SaaS tools, and brand identity.
-                  I&apos;m most energised by projects with real constraints, a complex
-                  workflow to simplify, a brand to express through a digital product, or
-                  a technical challenge that requires design to solve it.
+                  My work spans e-commerce, marketplaces, deals platforms, and internal tooling.
+                  I&apos;m most energised by projects with real constraints — a complex workflow
+                  to simplify, an integration to get right, or ambiguous requirements to turn
+                  into working software. Recent projects include Offeritz, a production deals
+                  platform on a custom domain, and a bilingual voice-to-voice research system
+                  built with deep learning.
                 </p>
                 <p className="text-base text-[#A1A1AA] leading-relaxed">
-                  Outside of client work, I think and write about accessible design,
-                  design systems, and the craft of interface engineering.
+                  I&apos;m finishing a BSc (Hons) in Computer Science &amp; Technology at Uva
+                  Wellassa University, and outside of work I think and write about accessible
+                  design, design systems, and clean, maintainable code.
                 </p>
 
                 <div className="pt-4 flex flex-wrap gap-3">
@@ -159,30 +167,23 @@ export default function AboutPage() {
       <BorderedSection className="py-16 md:py-24">
         <Container>
           <FadeIn>
-            <span className="mono text-[#A1A1AA] text-xs mb-8 block">Skills & tools</span>
+            <span className="mono text-[#A1A1AA] text-xs mb-3 block">Skills & tools</span>
+            <h2 className="h2 text-[#212121] mb-10 max-w-[480px]">
+              Design and engineering, across the stack
+            </h2>
           </FadeIn>
-          <div className="grid gap-10 md:grid-cols-2">
-            <FadeIn delay={0.05}>
-              <div>
-                <h3 className="h3 text-[#212121] mb-5">Design</h3>
+          <StaggerContainer className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {skillGroups.map((group) => (
+              <StaggerItem key={group.title}>
+                <h3 className="h3 text-[#212121] mb-4">{group.title}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {designTools.map((tool) => (
-                    <Badge key={tool} variant="default" className="text-sm py-1 px-3">{tool}</Badge>
+                  {group.items.map((item) => (
+                    <Badge key={item} variant="default" className="text-sm py-1 px-3">{item}</Badge>
                   ))}
                 </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <div>
-                <h3 className="h3 text-[#212121] mb-5">Development</h3>
-                <div className="flex flex-wrap gap-2">
-                  {devStack.map((tech) => (
-                    <Badge key={tech} variant="default" className="text-sm py-1 px-3">{tech}</Badge>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </Container>
       </BorderedSection>
 
@@ -217,7 +218,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="h2 text-[#212121]">Ready to work together?</h2>
                 <p className="text-base text-[#A1A1AA] mt-2">
-                  I&apos;m available for freelance projects. Let&apos;s talk.
+                  Open to software engineering roles and freelance projects. Let&apos;s talk.
                 </p>
               </div>
               <Link

@@ -6,25 +6,25 @@ import { WorkClient } from "./WorkClient";
 import { projects } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Work & Projects | UI/UX Design Case Studies",
+  title: "Work & Projects | UI/UX Design & Full-Stack Case Studies",
   description:
-    "UI/UX design and development case studies by Janukshan — e-commerce UI, marketplace platforms, food delivery apps, and design systems. See how I solve real product problems.",
+    "UI/UX design and full-stack engineering case studies by Janukshan — the Offeritz deals platform, e-commerce UIs, marketplaces, and full-stack web apps. See how I solve real product problems.",
   keywords: [
-    "UI/UX design case studies", "design portfolio", "product design work",
-    "e-commerce UI design", "marketplace design", "design systems portfolio",
-    "Next.js projects", "React projects", "interface engineering portfolio", "Janukshan projects",
+    "UI/UX design case studies", "full-stack projects", "software engineering portfolio",
+    "e-commerce UI design", "marketplace design", "Next.js projects", "Node.js projects",
+    "React projects", "design systems portfolio", "Janukshan projects",
   ],
   alternates: { canonical: "https://janukshan.dev/work" },
   openGraph: {
     url: "https://janukshan.dev/work",
-    title: "Work & Projects | UI/UX Design Case Studies — Janukshan",
-    description: "UI/UX design and development case studies — e-commerce UI, marketplace platforms, and design systems.",
-    images: [{ url: "/UIUX/E-Commerce/Product Page.jpg", width: 1200, height: 630, alt: "Janukshan — Design Work" }],
+    title: "Work & Projects | UI/UX Design & Full-Stack Case Studies — Janukshan",
+    description: "UI/UX design and full-stack engineering case studies — deals platforms, e-commerce UIs, marketplaces, and web apps.",
+    images: [{ url: "/UIUX/E-Commerce/Product Page.jpg", width: 1200, height: 630, alt: "Janukshan — Design & Engineering Work" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Work & Projects | UI/UX Design Case Studies — Janukshan",
-    description: "UI/UX design and development case studies by Janukshan.",
+    title: "Work & Projects | UI/UX Design & Full-Stack Case Studies — Janukshan",
+    description: "UI/UX design and full-stack engineering case studies by Janukshan.",
     images: ["/UIUX/E-Commerce/Product Page.jpg"],
   },
 };
@@ -32,13 +32,14 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <BorderedSection topBorder={false} corners={false} className="pt-10 pb-10 md:pt-14 md:pb-14 bg-[#333333]">
+      <BorderedSection topBorder={false} corners={false} className="pt-20 pb-12 md:pt-32 md:pb-16">
         <Container>
           <FadeIn>
             <span className="mono text-[#A1A1AA] text-xs mb-5 block">Work</span>
-            <h1 className="h1 text-white max-w-[600px]">Projects &amp; case studies</h1>
-            <p className="body-lg text-[#A1A1AA] mt-5 max-w-[480px]">
-              A selection of UI/UX design and full-stack development projects.
+            <h1 className="h1 text-[#212121] max-w-[640px]">Projects &amp; case studies</h1>
+            <p className="body-lg text-[#A1A1AA] mt-5 max-w-[520px]">
+              A selection of UI/UX design and full-stack engineering projects —
+              from production platforms to interface systems.
             </p>
           </FadeIn>
         </Container>

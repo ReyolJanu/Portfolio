@@ -76,42 +76,73 @@ export const projects: Project[] = [
       "I introduced high-fidelity mockup previews for each print, a step-by-step customisation flow, and social proof elements at key decision points.",
   },
   {
-    slug: "bestwishes-app",
-    title: "BestWishes E-Commerce App",
+    slug: "offeritz",
+    title: "Offeritz — Deals & Advertising Platform",
     description:
-      "A full-stack gifting platform, custom gift boxes, personalisation, and a real-time order dashboard for both customers and admins.",
+      "A production deals and advertisement platform for the Sri Lankan market, live on a custom domain with payments, transactional email, and OAuth.",
     category: "development",
-    tags: ["Next.js", "React", "MongoDB", "TypeScript"],
-    year: "2024",
+    tags: ["Next.js", "Supabase", "PostgreSQL", "Cloudflare R2", "Railway"],
+    year: "2025",
+    featured: true,
+    coverImage: "/UIUX/E-Commerce/Services.png",
+    images: [
+      "/UIUX/E-Commerce/Services.png",
+      "/UIUX/E-Commerce/Product Page.jpg",
+      "/UIUX/E-Commerce/Checkout page.png",
+    ],
+    link: "https://offeritz.lk",
+    github: "https://github.com/ReyolJanu",
+    role: "Full-Stack Engineer",
+    overview:
+      "A full-stack deals and advertising platform shipped to production on a custom domain (offeritz.lk). Built on Next.js and Supabase, it covers listings, categories, payments, authentication, and transactional email end to end.",
+    challenge:
+      "The product started on a Next.js + Express + MongoDB + Cloudinary stack that was expensive to operate and awkward to scale. It also needed real payments, verified email delivery, and social login before it could go live for real users.",
+    solution:
+      "I led a full-stack migration to Next.js + Supabase (PostgreSQL) + Cloudflare R2, deployed on Railway's Singapore region for low regional latency. I integrated PayHere payments, Resend transactional email with DNS/SPF/DKIM verification, and Google OAuth with account-linking, and handled SEO through Google Search Console.",
+  },
+  {
+    slug: "bestwishes-app",
+    title: "BestWishes — Collaborative Gifting Platform",
+    description:
+      "A full-stack e-commerce gifting platform with collaborative surprise gifting, secure auth, Stripe payments, and role-based admin dashboards.",
+    category: "development",
+    tags: ["Next.js", "Express.js", "MongoDB", "Stripe", "JWT"],
+    year: "2025",
     featured: false,
     coverImage: "/UIUX/E-Commerce/customizable gift page.png",
-    images: ["/UIUX/E-Commerce/customizable gift page.png"],
-    role: "Full-Stack Developer",
+    images: [
+      "/UIUX/E-Commerce/customizable gift page.png",
+      "/UIUX/E-Commerce/Checkout page.png",
+      "/UIUX/E-Commerce/Registation page.png",
+    ],
+    github: "https://github.com/ReyolJanu/Bestwise",
+    role: "Full-Stack Engineer",
     overview:
-      "A complete e-commerce solution for a gifting brand. Built with Next.js and MongoDB, the platform handles product management, custom gift box building, secure checkout, and admin order management.",
+      "A complete e-commerce gifting solution built with Next.js, Express, and MongoDB. The platform lets people plan collaborative surprise gifts while giving the business full control over orders and fulfilment.",
     challenge:
-      "The client needed a custom gift-box builder that let customers mix and match products in real time, while keeping inventory management simple on the admin side.",
+      "The product needed secure multi-step authentication, real payments, and a way for two operational roles — admin and delivery staff — to manage orders without stepping on each other.",
     solution:
-      "I built a drag-and-drop box builder with live price calculation, integrated Stripe for payments, and created a lightweight admin dashboard for order fulfilment tracking.",
+      "I built JWT authentication with OTP verification and Stripe payments, then layered role-based access across admin and delivery-staff roles with real-time order tracking and automated email reminders.",
   },
   {
     slug: "resto-app",
-    title: "Resto Food Delivery App",
+    title: "RESTO — Reservation & Ordering System",
     description:
-      "A full-stack food delivery platform with real-time order tracking, restaurant management, and a delivery driver interface.",
+      "A table-reservation, food-ordering, and payment-tracking system with a bird's-eye floor layout and role-based access control.",
     category: "development",
-    tags: ["React", "Node.js", "Firebase", "Tailwind CSS"],
-    year: "2023",
+    tags: ["React", "PHP", "Tailwind CSS", "REST API"],
+    year: "2024",
     featured: false,
-    coverImage: "/profilepng.png",
-    images: ["/profilepng.png"],
-    role: "Full-Stack Developer",
+    coverImage: "/UIUX/E-Commerce/about.png",
+    images: ["/UIUX/E-Commerce/about.png", "/UIUX/E-Commerce/Product Page.jpg"],
+    github: "https://github.com/ReyolJanu/Resto",
+    role: "Full-Stack Engineer",
     overview:
-      "A three-sided marketplace for food delivery: customers browse and order, restaurants manage menus and orders, and drivers get optimised delivery routes.",
+      "A restaurant management system covering table reservations, ordering, and payment tracking, backed by a custom PHP REST API and a React + Tailwind front-end.",
     challenge:
-      "Coordinating real-time state across three different user types, customer, restaurant, and driver, while keeping latency low and the UI responsive.",
+      "Staff needed to see the floor at a glance and manage reservations, orders, and payments from one place, with different permissions for different roles.",
     solution:
-      "Firebase Realtime Database handles live order state. Each user type gets a tailored interface with only the controls they need, keeping the experience simple despite the backend complexity.",
+      "I designed a bird's-eye-view floor layout in React + Tailwind and wired it to a custom PHP REST API, with role-based access control keeping each user focused on the controls relevant to them.",
   },
 ];
 
@@ -251,18 +282,18 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "interface-development",
-    title: "Interface Development",
+    id: "full-stack-development",
+    title: "Full-Stack Development",
     description:
-      "Pixel-perfect implementation of designs into production-ready interfaces using React, Next.js, and Tailwind CSS with smooth animations and real performance.",
+      "End-to-end web applications — not just the front-end. I build the APIs, databases, auth, and integrations behind a product and ship it to production.",
     coverImage: "/UIUX/gems/AuctionPage.png",
     features: [
-      "React & Next.js development",
-      "Responsive & accessible markup",
-      "Framer Motion animations",
-      "Component library build-out",
-      "Performance optimisation",
-      "Design-to-code handoff",
+      "Next.js & Node.js/Express apps",
+      "RESTful API design",
+      "PostgreSQL, MongoDB & Supabase",
+      "Auth — JWT, OAuth, OTP flows",
+      "Payments — Stripe & PayHere",
+      "Deployment — Vercel, Railway, Cloudflare",
     ],
   },
   {
